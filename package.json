@@ -34,9 +34,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "node infra/download.js && gatsby build --prefix-paths",
+    "build": "node infra/download.js && gatsby build --prefix-paths && rm -rf docs && cp -r public docs",
     "develop": "gatsby develop",
-    "deploy": "npm run build && gh-pages --dist public",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
