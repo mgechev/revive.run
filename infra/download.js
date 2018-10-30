@@ -47,7 +47,7 @@ const handleContent = (markdown, p) => {
   downloadImages(imgs.toArray().map(e => e.attribs.src), p);
   imgs.each((i, e) => {
     const name = e.attribs.src.split('/').pop();
-    markdown = markdown.replace(e.attribs.src, `/images/gen/${p.id}/${name}`);
+    markdown = markdown.replace(e.attribs.src, `/images/gen/${name}`);
   });
   markdown = `---
 path: "${p.path}"
@@ -61,12 +61,11 @@ const downloadImages = (urls, p) => {
   const parts = p.url.split('/');
   parts.pop();
   const base = parts.join('/');
-  fs.mkdirSync(`static/images/gen/${p.id}`);
   urls.forEach(u => {
     const name = u.split('/').pop();
     wget({
       url: base + '/' + u,
-      dest: `static/images/gen/${p.id}/${name}`
+      dest: `static/images/gen/${name}`
     });
   });
 };

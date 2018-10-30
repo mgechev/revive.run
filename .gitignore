@@ -7,4 +7,7 @@ yarn-error.log
 /public
 .DS_Store
 content/api
+static/images/gen
+content/docs.md
+content/rules.md
 

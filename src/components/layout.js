@@ -22,11 +22,10 @@ const Layout = ({ children, location }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Guess.js documentation website' },
+            { name: 'description', content: 'Revive documentation website' },
             {
               name: 'keywords',
-              content:
-                'Guess.js, web performance, predictive prefetching, prefetching, machine learning, markov chain, neural network, lstm'
+              content: 'Revive, go, linting, static analysis'
             }
           ]}
           link={[

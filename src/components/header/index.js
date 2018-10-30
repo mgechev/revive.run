@@ -13,7 +13,7 @@ const Header = () => (
       }}
     >
       <nav>
-        <img className="revive-logo" src={require('../../../static/images/logo.png')} alt="Guess.js Logo" />
+        <img className="revive-logo" src={require('../../../static/images/logo.png')} alt="Revive Logo" />
         <Link to="/">Home</Link>
         <Link to="/docs">Docs</Link>
       </nav>
