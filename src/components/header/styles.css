@@ -1,0 +1,13 @@
+.header {
+  background-color: #174d73;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header .revive-logo {
+  width: 40px;
+  float: left;
+  margin-top: -9px;
+}

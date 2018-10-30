@@ -1,0 +1,5 @@
+---
+path: "/docs/rule"
+---
+
+TBD
