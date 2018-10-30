@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "description": "Revive's home page",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "homepage": "https://revive.run",
+  "author": "Minko Gechev <mgechev@gmail.com>",
   "dependencies": {
     "@babel/core": "^7.1.2",
     "gatsby": "^2.0.19",
