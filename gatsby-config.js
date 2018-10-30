@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    title: 'revive'
+    title: 'revive - fast & configurable linter for Go'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
