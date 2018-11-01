@@ -18,12 +18,13 @@
 .main {
   background-color: #174d73;
   height: 230px;
+  margin-top: -2px;
 }
 
 .main h1 {
   text-align: center;
   color: #fff;
-  font-size: 130px;
+  font-size: 115px;
   margin-bottom: 5px;
 }
 

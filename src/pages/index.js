@@ -11,7 +11,7 @@ const IndexPage = ({ location }) => (
       <div className="headline">fast & extensible static code analysis framework for Go</div>
     </div>
     <br />
-    <p style={{ maxWidth: '700px', margin: 'auto' }}>
+    <p style={{ maxWidth: '700px', margin: 'auto', padding: 10 }}>
       <p>
         Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint.{' '}
         <strong>
