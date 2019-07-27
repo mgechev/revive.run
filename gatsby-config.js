@@ -71,19 +71,19 @@ module.exports = {
       options: {
         trackingId: 'UA-128392643-1'
       }
-    }
-    //    {
-    //      resolve: 'gatsby-plugin-guess-js',
-    //      options: {
-    //        // Find the view id in the GA admin in a section labeled "views"
-    //        GAViewID: `184199008`,
-    //        minimumThreshold: 0.03,
-    //        // The "period" for fetching analytic data.
-    //        period: {
-    //          startDate: new Date(new Date().getTime() - 604800000),
-    //          endDate: new Date(),
-    //        },
-    //      },
-    //    },
+    },
+//    {
+//      resolve: 'gatsby-plugin-guess-js',
+//      options: {
+//        // Find the view id in the GA admin in a section labeled "views"
+//        GAViewID: `184230484`,
+//        minimumThreshold: 0.03,
+//        // The "period" for fetching analytic data.
+//        period: {
+//          startDate: new Date(new Date().getTime() - 604800000),
+//          endDate: new Date(),
+//        },
+//      },
+//    },
   ]
 };
