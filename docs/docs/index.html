@@ -183,7 +183,7 @@
 <li>The output will be formatted with the <code class="language-text">friendly</code> formatter</li>
 <li>The linter will analyze <code class="language-text">github.com/mgechev/revive</code> and the files in <code class="language-text">package</code></li>
 </ul>
-<h3 id="comment-annotations"><a href="#comment-annotations" aria-label="comment annotations permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comment Annotations</h3>
+<h3 id="comment-directives"><a href="#comment-directives" aria-label="comment directives permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comment Directives</h3>
 <p>Using comments, you can disable the linter for the entire file or only range of lines:</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token comment">//revive:disable</span>
 
@@ -198,6 +198,14 @@
 <span class="token punctuation">}</span>
 <span class="token comment">//revive:enable:unexported-return</span></code></pre></div>
 <p>This way, <code class="language-text">revive</code> will not warn you for that you're returning an object of an unexported type, from an exported function.</p>
+<p>You can document why you disable the linter by adding a trailing text in the directive, for example</p>
+<div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token comment">//revive:disable Until the code is stable</span></code></pre></div>
+<div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token comment">//revive:disable:cyclomatic High complexity score but easy to understand </span></code></pre></div>
+<p>You can also configure <code class="language-text">revive</code> to enforce documenting linter disabling directives by adding</p>
+<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">directive.specify-disable-reason</span><span class="token punctuation">]</span></code></pre></div>
+<p>in the configuration. You can set the severity (defaults to <em>warning</em>) of the violation of this directive</p>
+<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">directive.specify-disable-reason</span><span class="token punctuation">]</span>
+    <span class="token key property">severity</span> <span class="token punctuation">=</span> <span class="token string">"error"</span></code></pre></div>
 <h3 id="configuration"><a href="#configuration" aria-label="configuration permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h3>
 <p><code class="language-text">revive</code> can be configured with a TOML file. Here's a sample configuration with explanation for the individual properties:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token comment"># When set to false, ignores files with "GENERATED" header, similar to golint</span>
@@ -469,15 +477,8 @@
 <td><a href="./RULES_DESCRIPTIONS.md#modifies-parameter"><code class="language-text">modifies-parameter</code></a></td>
 <td align="center">n/a</td>
 <td align="left">Warns on assignments to function parameters</td>
-<td align="center">no</td>
-<td align="center">no</td>
-</tr>
-<tr>
-<td><a href="./RULES_DESCRIPTIONS.md#confusing-results"><code class="language-text">confusing-results</code></a></td>
-<td align="center">n/a</td>
-<td align="left">Suggests to name potentially confusing function results</td>
-<td align="center">no</td>
-<td align="center">no</td>
+<td align="center">g-results`](./RULES_DESCRIPTIONS.md#confusing-results)   |  n/a   | Suggests to name potentially confusing function results          |    no    |  no</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td><a href="./RULES_DESCRIPTIONS.md#deep-exit"><code class="language-text">deep-exit</code></a></td>
@@ -494,11 +495,11 @@
 <td align="center">no</td>
 </tr>
 <tr>
-<td><a href="./RULES_DESCRIPTIONS.md#unreachable-code"><code class="language-text">unreachable-code</code></a> chable code</td>
+<td><a href="./RULES_DESCRIPTIONS.md#unreachable-code"><code class="language-text">unreachable-code</code></a></td>
+<td align="center">n/a</td>
+<td align="left">Warns on unreachable code</td>
 <td align="center">no</td>
-<td align="left">no</td>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">no</td>
 </tr>
 <tr>
 <td><a href="./RULES_DESCRIPTIONS.md#add-constant"><code class="language-text">add-constant</code></a></td>
@@ -799,7 +800,7 @@
 <h3 id="custom-formatter"><a href="#custom-formatter" aria-label="custom formatter permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom Formatter</h3>
 <p>Each formatter needs to implement the following interface:</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">type</span> Formatter <span class="token keyword">interface</span> <span class="token punctuation">{</span>
-	<span class="token function">Format</span><span class="token punctuation">(</span><span class="token operator">&lt;-</span><span class="token keyword">chan</span> Failure<span class="token punctuation">,</span> RulesConfig<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+	<span class="token function">Format</span><span class="token punctuation">(</span><span class="token operator">&lt;-</span><span class="token keyword">chan</span> Failure<span class="token punctuation">,</span> Config<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
 	<span class="token function">Name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p>The <code class="language-text">Format</code> method accepts a channel of <code class="language-text">Failure</code> instances and the configuration of the enabled rules. The <code class="language-text">Name()</code> method should return a string different from the names of the already existing rules. This string is used when specifying the formatter when invoking the <code class="language-text">revive</code> CLI tool.</p>
