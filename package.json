@@ -45,7 +45,7 @@
     "node-wget": "^0.4.3",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
-    "showdown": "^1.9.0",
+    "showdown": "^1.9.1",
     "typedoc": "^0.15.0",
     "typedoc-plugin-markdown": "^2.1.0",
     "typescript": "^3.5.3"
