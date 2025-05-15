@@ -101,7 +101,7 @@ class App extends React.Component {
         </section>
         <section>
           <header>
-            <a href="https://godoc.org/github.com/mgechev/revive">API</a>
+            <a href="https://pkg.go.dev/github.com/mgechev/revive">API</a>
           </header>
         </section>
       </>
