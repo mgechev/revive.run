@@ -634,15 +634,15 @@ This is geared towards user facing applications where string literals are often 
 <p><em>Configuration</em>: N/A</p>
 <h2 id="struct-tag"><a href="#struct-tag" aria-label="struct tag permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct-tag</h2>
 <p><em>Description</em>: Struct tags are not checked at compile time.
-This rule spots errors in struct tags of the following types: asn1, bson, datastore, default, json, mapstructurobuf, required, toml, url, validate, xml, yaml.</p>
+This rule spots errors in struct tags of the following types: asn1, bson, datastore, default, json, mapstructure, properties, protobuf, required, toml, url, validate, xml, yaml.</p>
 <p><em>Configuration</em>: (optional) list of user defined options.</p>
 <p>Example:
 To accept the <code class="language-text">inline</code> option in JSON tags (and <code class="language-text">outline</code> and <code class="language-text">gnu</code> in BSON tags) you must provide the following configuration</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.struct-tag</span><span class="token punctuation">]</span>
   <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"json,inline"</span><span class="token punctuation">,</span> <span class="token string">"bson,outline,gnu"</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="superfluous-else"><a href="#superfluous-else" aria-label="superfluous else permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>superfluous-else</h2>
-<p><em>Description</em>: To improve the readability of code, it is recommended to reduce the indentation as much as possible.
-This rule highlights redundant <em>else-blocks</em> that can be eliminated from the code.</p>
+<p><em>Descriphe readability of code, it is recommended to reduce the indentation as much as possible.
+This rule highlights redundant _else-blocks</em> that can be eliminated from the code.</p>
 <p><em>Configuration</em>: ([]string) rule flags. Available flags are:</p>
 <ul>
 <li><code class="language-text">preserveScope</code> (<code class="language-text">preservescope</code>, <code class="language-text">preserve-scope</code>): (string) do not suggest refactorings that would increase variable scope</li>
