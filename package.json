@@ -19,7 +19,7 @@
     "gatsby-remark-prismjs": "^3.3.4",
     "gatsby-remark-relative-images": "^0.2.2",
     "gatsby-source-filesystem": "^2.1.8",
-    "gatsby-transformer-remark": "^2.6.10",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.2.5",
     "guess-webpack": "^0.3.12",
     "hamburgers": "^1.1.3",
