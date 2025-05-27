@@ -48,9 +48,12 @@
         }
       }
     })
-  </script><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#1A4E72"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link as="script" rel="preload" href="/webpack-runtime-dc4df27cea72dd6ebe1a.js"/><link as="script" rel="preload" href="/app-349cbf2f10500a195fd6.js"/><link as="script" rel="preload" href="/styles-03b66f85555b615316ef.js"/><link as="script" rel="preload" href="/1-050b8b25d79659e15730.js"/><link as="script" rel="preload" href="/component---src-templates-doc-template-js-fd715a613f335af747a2.js"/><link as="fetch" rel="preload" href="/page-data/docs/page-data.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="header"><div style="margin:0 auto;max-width:90%;padding:1.45rem 1.0875rem"><nav><img class="revive-logo" src="/static/logo-d46261a11b8c01574d67e461c96e1527.png" alt="Revive Logo"/><a href="/">Home</a><a aria-current="page" class="" href="/docs">Docs</a></nav></div></div><a href="https://github.com/mgechev/revive" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" class="octocat-corner" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div><div class="docs-wrapper"><button class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button><div class="docs-sidebar" style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden" role="navigation"><div class="docs-nav" style="z-index:2;position:absolute;top:0;bottom:0;transition:none;-webkit-transition:none;will-change:transform;overflow-y:auto;left:0;transform:translateX(-100%);-webkit-transform:translateX(-100%)"><section><header><a href="/r">Rules</a></header></section><section><header>Guides</header><ul><a href="/docs/rule"><li>Develop rule</li></a><a href="/docs/formatter"><li>Develop formatter</li></a></ul></section><section><header><a href="https://pkg.go.dev/github.com/mgechev/revive">API</a></header></section></div><div style="z-index:1;position:fixed;top:0;left:0;right:0;bottom:0;opacity:0;visibility:hidden;transition:none;background-color:rgba(0,0,0,.3)"></div><div class="docs-content" style="position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;-webkit-overflow-scrolling:touch;transition:none"><div class="docs-content"><div class="blog-post-container"><div class="blog-post-content"><p><a href="https://github.com/mgechev/revive/actions/workflows/test.yaml"><img src="https://github.com/mgechev/revive/actions/workflows/test.yaml/badge.svg" alt="Build Status"></a></p>
-<h1 id="revive"><a href="#revive" aria-label="revive permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>revive</h1>
-<p>Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint. <strong><code class="language-text">Revive</code> provides a framework for development of custom rules, and lets you define a strict preset for enhancing your development &#x26; code review processes</strong>.</p>
+  </script><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#1A4E72"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link as="script" rel="preload" href="/webpack-runtime-dc4df27cea72dd6ebe1a.js"/><link as="script" rel="preload" href="/app-349cbf2f10500a195fd6.js"/><link as="script" rel="preload" href="/styles-03b66f85555b615316ef.js"/><link as="script" rel="preload" href="/1-050b8b25d79659e15730.js"/><link as="script" rel="preload" href="/component---src-templates-doc-template-js-fd715a613f335af747a2.js"/><link as="fetch" rel="preload" href="/page-data/docs/page-data.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="header"><div style="margin:0 auto;max-width:90%;padding:1.45rem 1.0875rem"><nav><img class="revive-logo" src="/static/logo-d46261a11b8c01574d67e461c96e1527.png" alt="Revive Logo"/><a href="/">Home</a><a aria-current="page" class="" href="/docs">Docs</a></nav></div></div><a href="https://github.com/mgechev/revive" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" class="octocat-corner" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div><div class="docs-wrapper"><button class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button><div class="docs-sidebar" style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden" role="navigation"><div class="docs-nav" style="z-index:2;position:absolute;top:0;bottom:0;transition:none;-webkit-transition:none;will-change:transform;overflow-y:auto;left:0;transform:translateX(-100%);-webkit-transform:translateX(-100%)"><section><header><a href="/r">Rules</a></header></section><section><header>Guides</header><ul><a href="/docs/rule"><li>Develop rule</li></a><a href="/docs/formatter"><li>Develop formatter</li></a></ul></section><section><header><a href="https://pkg.go.dev/github.com/mgechev/revive">API</a></header></section></div><div style="z-index:1;position:fixed;top:0;left:0;right:0;bottom:0;opacity:0;visibility:hidden;transition:none;background-color:rgba(0,0,0,.3)"></div><div class="docs-content" style="position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;-webkit-overflow-scrolling:touch;transition:none"><div class="docs-content"><div class="blog-post-container"><div class="blog-post-content"><h1 id="revive"><a href="#revive" aria-label="revive permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>revive</h1>
+<p><a href="https://github.com/mgechev/revive/actions/workflows/test.yaml"><img src="https://github.com/mgechev/revive/actions/workflows/test.yaml/badge.svg" alt="Build Status"></a>
+<a href="https://pkg.go.dev/github.com/mgechev/revive"><img src="https://pkg.go.dev/badge/github.com/mgechev/revive.svg" alt="Go Reference"></a></p>
+<p>Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint.
+<strong><code class="language-text">Revive</code> provides a framework for development of custom rules,
+and lets you define a strict preset for enhancing your development &#x26; code review processes</strong>.</p>
 <p align="center">
   <img src="/images/gen/logo.png" alt="" width="300">
   <br>
@@ -67,48 +70,13 @@
 <li><code class="language-text">golint</code> allows this only for generated files.</li>
 </ul>
 </li>
-<li>Optional type checking. Most rules in golint do not require type checking. If you disable them in the config file, revive will run over 6x faster than golint.</li>
+<li>Optional type checking. Most rules in golint do not require type checking.
+If you disable them in the config file, revive will run over 6x faster than golint.</li>
 <li>Provides multiple formatters which let us customize the output.</li>
 <li>Allows to customize the return code for the entire linter or based on the failure of only some rules.</li>
 <li><em>Everyone can extend it easily with custom rules or formatters.</em></li>
 <li><code class="language-text">Revive</code> provides more rules compared to <code class="language-text">golint</code>.</li>
 </ul>
-<h2 id="who-uses-revive"><a href="#who-uses-revive" aria-label="who uses revive permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Who uses Revive</h2>
-<ul>
-<li><a href="https://github.com/pingcap/tidb"><code class="language-text">tidb</code></a> - TiDB is a distributed HTAP database compatible with the MySQL protocol</li>
-<li><a href="https://github.com/grafana/grafana"><code class="language-text">grafana</code></a> - The tool for beautiful monitoring and metric analytics &#x26; dashboards for Graphite, InfluxDB &#x26; Prometheus &#x26; More</li>
-<li><a href="https://github.com/etcd-io/etcd"><code class="language-text">etcd</code></a> - Distributed reliable key-value store for the most critical data of a distributed system</li>
-<li><a href="https://github.com/uber/cadence"><code class="language-text">cadence</code></a> - Cadence is a distributed, scalable, durable, and highly available orchestration engine by Uber to execute asynchronous long-running business logic in a scalable and resilient way</li>
-<li><a href="https://github.com/MontFerret/ferret"><code class="language-text">ferret</code></a> - Declarative web scraping</li>
-<li><a href="https://github.com/gopasspw/gopass"><code class="language-text">gopass</code></a> - The slightly more awesome standard unix password manager for teams</li>
-<li><a href="https://github.com/go-gitea/gitea"><code class="language-text">gitea</code></a> - Git with a cup of tea, painless self-hosted git service</li>
-<li><a href="https://github.com/360EntSecGroup-Skylar/excelize"><code class="language-text">excelize</code></a> - Go library for reading and writing Microsoft Excel™ (XLSX) files</li>
-<li><a href="https://github.com/xuri/aurora"><code class="language-text">aurora</code></a> - aurora is a web-based Beanstalk queue server console written in Go</li>
-<li><a href="https://github.com/XiaoMi/soar"><code class="language-text">soar</code></a> - SQL Optimizer And Rewriter</li>
-<li><a href="https://github.com/pyroscope-io/pyroscope"><code class="language-text">pyroscope</code></a> - Continuous profiling platform</li>
-<li><a href="https://github.com/appleboy/gorush"><code class="language-text">gorush</code></a> - A push notification server written in Go (Golang).</li>
-<li><a href="https://github.com/moncho/dry"><code class="language-text">dry</code></a> - dry - A Docker manager for the terminal.</li>
-<li><a href="https://github.com/chenjiandongx/go-echarts"><code class="language-text">go-echarts</code></a> - The adorable charts library for Golang</li>
-<li><a href="https://github.com/reviewdog/reviewdog"><code class="language-text">reviewdog</code></a> - Automated code review tool integrated with any code analysis tools regardless of programming language</li>
-<li><a href="https://github.com/rudderlabs/rudder-server"><code class="language-text">rudder-server</code></a> - Privacy and Security focused Segment-alternative, in Golang and React.</li>
-<li><a href="https://github.com/pa-m/sklearn"><code class="language-text">sklearn</code></a> - A partial port of scikit-learn written in Go.</li>
-<li><a href="https://github.com/pseudomuto/protoc-gen-doc"><code class="language-text">protoc-gen-doc</code></a> - Documentation generator plugin for Google Protocol Buffers.</li>
-<li><a href="https://github.com/llir/llvm"><code class="language-text">llvm</code></a> - Library for interacting with LLVM IR in pure Go.</li>
-<li><a href="https://github.com/SAP/jenkins-library"><code class="language-text">jenkins-library</code></a> - Jenkins shared library for Continuous Delivery pipelines by SAP.</li>
-<li><a href="https://github.com/tikv/pd"><code class="language-text">pd</code></a> - Placement driver for TiKV.</li>
-<li><a href="https://github.com/shellhub-io/shellhub"><code class="language-text">shellhub</code></a> - ShellHub enables teams to easily access any Linux device behind firewall and NAT.</li>
-<li><a href="https://github.com/TheThingsNetwork/lorawan-stack"><code class="language-text">lorawan-stack</code></a> - The Things Network Stack for LoRaWAN V3</li>
-<li><a href="https://github.com/appleboy/gin-jwt"><code class="language-text">gin-jwt</code></a> - This is a JWT middleware for Gin framework.</li>
-<li><a href="https://github.com/appleboy/gofight"><code class="language-text">gofight</code></a> - Testing API Handler written in Golang.</li>
-<li><a href="https://github.com/Clivern/Beaver"><code class="language-text">Beaver</code></a> - A Real Time Messaging Server.</li>
-<li><a href="https://github.com/go-ggz/ggz"><code class="language-text">ggz</code></a> - An URL shortener service written in Golang</li>
-<li><a href="https://www.codeac.io?ref=revive"><code class="language-text">Codeac.io</code></a> - Automated code review service integrates with GitHub, Bitbucket and GitLab (even self-hosted) and helps you fight technical debt.</li>
-<li><a href="https://github.com/apache/incubator-devlake"><code class="language-text">DevLake</code></a> - Apache DevLake is an open-source dev data platform to ingest, analyze, and visualize the fragmented data from DevOps tools，which can distill insights to improve engineering productivity.</li>
-<li><a href="https://github.com/cinar/checker"><code class="language-text">checker</code></a> - Checker helps validating user input through rules defined in struct tags or directly through functions.</li>
-<li><a href="https://github.com/milvus-io/milvus"><code class="language-text">milvus</code></a> - A cloud-native vector database, storage for next generation AI applications.</li>
-<li><a href="https://github.com/cinar/indicator"><code class="language-text">indicator</code></a> - Indicator provides various technical analysis indicators, strategies, and a backtesting framework.</li>
-</ul>
-<p><em>Open a PR to add your project</em>.</p>
 <p align="center">
   <img src="/images/gen/demo.svg" alt width="700">
 </p>
@@ -117,7 +85,6 @@
 <li>
 <p><a href="#revive">revive</a></p>
 <ul>
-<li><a href="#who-uses-revive">Who uses Revive</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a></li>
 <li><a href="#docker">Docker</a></li>
@@ -164,7 +131,10 @@
 <li><a href="#golint">golint</a></li>
 <li><a href="#revives-speed">revive's speed</a></li>
 <li><a href="#overriding-colorization-detection">Overriding colorization detection</a></li>
+<li><a href="#who-uses-revive">Who uses Revive</a></li>
 <li><a href="#contributors">Contributors</a></li>
+<li><a href="#maintainers">Maintainers</a></li>
+<li><a href="#all">All</a></li>
 <li><a href="#license">License</a></li>
 </ul>
 </li>
@@ -176,12 +146,14 @@
 <p>You can install the main branch (including the last commit) with:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">go <span class="token function">install</span> github.com/mgechev/revive@master</code></pre></div>
 <h2 id="usage"><a href="#usage" aria-label="usage permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
-<p>Since the default behavior of <code class="language-text">revive</code> is compatible with <code class="language-text">golint</code>, without providing any additional flags, the only difference you'd notice is faster execution.</p>
-<p><code class="language-text">revive</code> supports a <code class="language-text">-config</code> flag whose value should correspond to a TOML file describing which rules to use for <code class="language-text">revive</code>'s linting. If not provided, <code class="language-text">revive</code> will try to use a global config file (assumed to be located at <code class="language-text">$HOME/revive.toml</code>). Otherwise, if no configuration TOML file is found then <code class="language-text">revive</code> uses a built-in set of default linting rules.</p>
+<p>Since the default behavior of <code class="language-text">revive</code> is compatible with <code class="language-text">golint</code>, without providing any additional flags,the only difference you'd notice is faster execution.</p>
+<p><code class="language-text">revive</code> supports a <code class="language-text">-config</code> flag whose value should correspond to a TOML file describing which rules to use for <code class="language-text">revive</code>'s linting.
+If not provided, <code class="language-text">revive</code> will try to use a global config file (assumed to be located at <code class="language-text">$HOME/revive.toml</code>).
+Otherwise, if no configuration TOML file is found then <code class="language-text">revive</code> uses a built-in set of default linting rules.</p>
 <h3 id="docker"><a href="#docker" aria-label="docker permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h3>
 <p>A volume must be mounted to share the current repository with the container.
 Please refer to the <a href="https://docs.docker.com/storage/bind-mounts/">bind mounts Docker documentation</a></p>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker run -v <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>"</span>:/var/<span class="token operator">&lt;</span>repository<span class="token operator">></span> ghcr.io/mgechev/revive:v1.3.7 -config /var/<span class="token operator">&lt;</span>repository<span class="token operator">></span>/revive.toml -formatter stylish ./var/kidle/<span class="token punctuation">..</span>.</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker run -v <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>"</span>:/var/YOUR_REPOSITORY ghcr.io/mgechev/revive:v1.3.7 -config /var/YOUR_REPOSITORY/revive.toml -formatter stylish ./var/YOUR_REPOSITORY/<span class="token punctuation">..</span>.</code></pre></div>
 <ul>
 <li><code class="language-text">-v</code> is for the volume</li>
 <li><code class="language-text">ghcr.io/mgechev/revive:v1.3.7</code> is the image name and its version corresponds to <code class="language-text">revive</code> command</li>
@@ -218,7 +190,11 @@ Please refer to the <a href="https://docs.docker.com/storage/bind-mounts/">bind 
 <li><a href="https://github.com/marketplace/actions/revive-action">Revive Action</a> with annotation support</li>
 </ul>
 <h3 id="continuous-integration"><a href="#continuous-integration" aria-label="continuous integration permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Continuous Integration</h3>
-<p><a href="https://www.codeac.io?ref=revive">Codeac.io</a> - Automated code review service integrates with GitHub, Bitbucket and GitLab (even self-hosted) and helps you fight technical debt. Check your <a href="https://www.codeac.io/documentation/pull-requests.html?ref=revive">pull-requests</a> with <a href="https://www.codeac.io/documentation/revive-configuration.html?ref=revive">revive</a> automatically. (free for open-source projects)</p>
+<p><a href="https://www.codeac.io?ref=revive">Codeac.io</a> - Automated code review service integrates with GitHub,
+Bitbucket and GitLab (even self-hosted) and helps you fight technical debt.
+Check your <a href="https://www.codeac.io/documentation/pull-requests.html?ref=revive">pull-requests</a> with
+<a href="https://www.codeac.io/documentation/revive-configuration.html?ref=revive">revive</a> automatically.
+(Free for open-source projects)</p>
 <h3 id="linter-aggregators"><a href="#linter-aggregators" aria-label="linter aggregators permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linter aggregators</h3>
 <h4 id="golangci-lint"><a href="#golangci-lint" aria-label="golangci lint permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>golangci-lint</h4>
 <p>To enable <code class="language-text">revive</code> in <code class="language-text">golangci-lint</code> you need to add <code class="language-text">revive</code> to the list of enabled linters:</p>
@@ -241,14 +217,20 @@ Please refer to the <a href="https://docs.docker.com/storage/bind-mounts/">bind 
         <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> unhandled<span class="token punctuation">-</span>error
           <span class="token key atrule">arguments</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"fmt.Printf"</span><span class="token punctuation">,</span> <span class="token string">"myFunction"</span><span class="token punctuation">]</span></code></pre></div>
 <p>The above configuration enables three rules of <code class="language-text">revive</code>: <em>atomic</em>, <em>line-length-limit</em> and <em>unhandled-error</em> and passes some arguments to the last two.
-The <a href="#configuration">Configuration</a> section of this document provides details on how to configure <code class="language-text">revive</code>. Note that while <code class="language-text">revive</code> configuration is in TOML, that of <code class="language-text">golangci-lint</code> is in YAML or JSON.
+The <a href="#configuration">Configuration</a> section of this document provides details on how to configure <code class="language-text">revive</code>.
+Note that while <code class="language-text">revive</code> configuration is in TOML, that of <code class="language-text">golangci-lint</code> is in YAML or JSON.
 See the <a href="https://golangci-lint.run/usage/linters/#revive">golangci-lint website</a> for more information about configuring <code class="language-text">revive</code>.</p>
-<p>Please notice that if no particular configuration is provided, <code class="language-text">revive</code> will behave as <code class="language-text">golint</code> does, i.e. all <code class="language-text">golint</code> rules are enabled (the <a href="#available-rules">Available Rules table</a> details what are the <code class="language-text">golint</code> rules). When a configuration is provided, only rules in the configuration are enabled.</p>
+<p>Please notice that if no particular configuration is provided, <code class="language-text">revive</code> will behave as <code class="language-text">golint</code> does, i.e. all <code class="language-text">golint</code> rules are enabled
+(the <a href="#available-rules">Available Rules table</a> details what are the <code class="language-text">golint</code> rules).
+When a configuration is provided, only rules in the configuration are enabled.</p>
 <h3 id="command-line-flags"><a href="#command-line-flags" aria-label="command line flags permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command Line Flags</h3>
 <p><code class="language-text">revive</code> accepts the following command line parameters:</p>
 <ul>
 <li><code class="language-text">-config [PATH]</code> - path to the config file in TOML format, defaults to <code class="language-text">$HOME/revive.toml</code> if present.</li>
-<li><code class="language-text">-exclude [PATTERN]</code> - pattern for files/directories/packages to be excluded for linting. You can specify the files you want to exclude for linting either as package name (i.e. <code class="language-text">github.com/mgechev/revive</code>), list them as individual files (i.e. <code class="language-text">file.go</code>), directories (i.e. <code class="language-text">./foo/...</code>), or any combination of the three. If no exclusion patterns are specified, <code class="language-text">vendor/...</code> will be excluded by default.</li>
+<li><code class="language-text">-exclude [PATTERN]</code> - pattern for files/directories/packages to be excluded for linting.
+You can specify the files you want to exclude for linting either as package name (i.e. <code class="language-text">github.com/mgechev/revive</code>),
+list them as individual files (i.e. <code class="language-text">file.go</code>), directories (i.e. <code class="language-text">./foo/...</code>), or any combination of the three.
+If no exclusion patterns are specified, <code class="language-text">vendor/...</code> will be excluded by default.</li>
 <li>
 <p><code class="language-text">-formatter [NAME]</code> - formatter to be used for the output. The currently available formatters are:</p>
 <ul>
@@ -277,14 +259,17 @@ See the <a href="https://golangci-lint.run/usage/linters/#revive">golangci-lint 
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token comment">//revive:disable</span>
 
 <span class="token keyword">func</span> <span class="token function">Public</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
 <span class="token comment">//revive:enable</span></code></pre></div>
-<p>The snippet above, will disable <code class="language-text">revive</code> between the <code class="language-text">revive:disable</code> and <code class="language-text">revive:enable</code> comments. If you skip <code class="language-text">revive:enable</code>, the linter will be disabled for the rest of the file.</p>
+<p>The snippet above, will disable <code class="language-text">revive</code> between the <code class="language-text">revive:disable</code> and <code class="language-text">revive:enable</code> comments.
+If you skip <code class="language-text">revive:enable</code>, the linter will be disabled for the rest of the file.</p>
 <p>With <code class="language-text">revive:disable-next-line</code> and <code class="language-text">revive:disable-line</code> you can disable <code class="language-text">revive</code> on a particular code line.</p>
 <p>You can do the same on a rule level. In case you want to disable only a particular rule, you can use:</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token comment">//revive:disable:unexported-return</span>
 <span class="token keyword">func</span> <span class="token function">Public</span><span class="token punctuation">(</span><span class="token punctuation">)</span> private <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> private
+	<span class="token keyword">return</span> private
 <span class="token punctuation">}</span>
+
 <span class="token comment">//revive:enable:unexported-return</span></code></pre></div>
 <p>This way, <code class="language-text">revive</code> will not warn you that you're returning an object of an unexported type, from an exported function.</p>
 <p>You can document why you disable the linter by adding a trailing text in the directive, for example</p>
@@ -294,7 +279,7 @@ See the <a href="https://golangci-lint.run/usage/linters/#revive">golangci-lint 
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">directive.specify-disable-reason</span><span class="token punctuation">]</span></code></pre></div>
 <p>in the configuration. You can set the severity (defaults to <em>warning</em>) of the violation of this directive</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">directive.specify-disable-reason</span><span class="token punctuation">]</span>
-    <span class="token key property">severity</span> <span class="token punctuation">=</span> <span class="token string">"error"</span></code></pre></div>
+<span class="token key property">severity</span> <span class="token punctuation">=</span> <span class="token string">"error"</span></code></pre></div>
 <h3 id="configuration"><a href="#configuration" aria-label="configuration permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h3>
 <p><code class="language-text">revive</code> can be configured with a TOML file. Here's a sample configuration with an explanation of the individual properties:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token comment"># When set to false, ignores files with "GENERATED" header, similar to golint</span>
@@ -316,11 +301,11 @@ See the <a href="https://golangci-lint.run/usage/linters/#revive">golangci-lint 
 <span class="token comment"># Configuration of the `cyclomatic` rule. Here we specify that</span>
 <span class="token comment"># the rule should fail if it detects code with higher complexity than 10.</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.cyclomatic</span><span class="token punctuation">]</span>
-  <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span>
+<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span>
 
 <span class="token comment"># Sets the severity of the `package-comments` rule to "error".</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.package-comments</span><span class="token punctuation">]</span>
-  <span class="token key property">severity</span> <span class="token punctuation">=</span> <span class="token string">"error"</span></code></pre></div>
+<span class="token key property">severity</span> <span class="token punctuation">=</span> <span class="token string">"error"</span></code></pre></div>
 <p>By default <code class="language-text">revive</code> will enable only the linting rules that are named in the configuration file.
 For example, the previous configuration file makes <code class="language-text">revive</code> to enable only <em>cyclomatic</em> and <em>package-comments</em> linting rules.</p>
 <p>To enable all available rules you need to add:</p>
@@ -329,9 +314,10 @@ For example, the previous configuration file makes <code class="language-text">r
 <p>To disable a rule, you simply mark it as disabled in the configuration.
 For example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.line-length-limit</span><span class="token punctuation">]</span>
-    <span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span></code></pre></div>
+<span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span></code></pre></div>
 <p>When enabling all rules you still need/can provide specific configurations for rules.
-The following file is an example configuration where all rules are enabled, except for those that are explicitly disabled, and some rules are configured with particular arguments:</p>
+The following file is an example configuration where all rules are enabled, except for those that are explicitly disabled,
+and some rules are configured with particular arguments:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token key property">severity</span> <span class="token punctuation">=</span> <span class="token string">"warning"</span>
 <span class="token key property">confidence</span> <span class="token punctuation">=</span> <span class="token number">0.8</span>
 <span class="token key property">errorCode</span> <span class="token punctuation">=</span> <span class="token number">0</span>
@@ -342,31 +328,32 @@ The following file is an example configuration where all rules are enabled, exce
 
 <span class="token comment"># Disabled rules</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.blank-imports</span><span class="token punctuation">]</span>
-    <span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.file-header</span><span class="token punctuation">]</span>
-    <span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.max-public-structs</span><span class="token punctuation">]</span>
-    <span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.line-length-limit</span><span class="token punctuation">]</span>
-    <span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.function-length</span><span class="token punctuation">]</span>
-    <span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.banned-characters</span><span class="token punctuation">]</span>
-    <span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">Disabled</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
 
 <span class="token comment"># Rule tuning</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.argument-limit</span><span class="token punctuation">]</span>
-    <span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.cyclomatic</span><span class="token punctuation">]</span>
-    <span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span>
+<span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.cognitive-complexity</span><span class="token punctuation">]</span>
-    <span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span>
+<span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.function-result-limit</span><span class="token punctuation">]</span>
-    <span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.error-strings</span><span class="token punctuation">]</span>
-    <span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"mypackage.Error"</span><span class="token punctuation">]</span></code></pre></div>
+<span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"mypackage.Error"</span><span class="token punctuation">]</span></code></pre></div>
 <h3 id="default-configuration"><a href="#default-configuration" aria-label="default configuration permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Default Configuration</h3>
-<p>The default configuration of <code class="language-text">revive</code> can be found at <code class="language-text">defaults.toml</code>. This will enable all rules available in <code class="language-text">golint</code> and use their default configuration (i.e. the way they are hardcoded in <code class="language-text">golint</code>).</p>
+<p>The default configuration of <code class="language-text">revive</code> can be found at <code class="language-text">defaults.toml</code>.
+This will enable all rules available in <code class="language-text">golint</code> and use their default configuration (i.e. the way they are hardcoded in <code class="language-text">golint</code>).</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">revive -config defaults.toml github.com/mgechev/revive</code></pre></div>
 <p>This will use the configuration file <code class="language-text">defaults.toml</code>, the <code class="language-text">default</code> formatter, and will run linting over the <code class="language-text">github.com/mgechev/revive</code> package.</p>
 <h3 id="custom-configuration"><a href="#custom-configuration" aria-label="custom configuration permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom Configuration</h3>
@@ -413,9 +400,9 @@ The following file is an example configuration where all rules are enabled, exce
 <span class="token key property">warningCode</span> <span class="token punctuation">=</span> <span class="token number">0</span>
 
 <span class="token punctuation">[</span><span class="token table class-name">rule.blank-imports</span><span class="token punctuation">]</span>
-   <span class="token key property">Exclude</span><span class="token punctuation">=</span><span class="token punctuation">[</span><span class="token string">"**/*.pb.go"</span><span class="token punctuation">]</span>
+<span class="token key property">Exclude</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"**/*.pb.go"</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.context-as-argument</span><span class="token punctuation">]</span>
-   <span class="token key property">Exclude</span><span class="token punctuation">=</span><span class="token punctuation">[</span><span class="token string">"src/somepkg/*.go"</span><span class="token punctuation">,</span> <span class="token string">"TEST"</span><span class="token punctuation">]</span></code></pre></div>
+<span class="token key property">Exclude</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"src/somepkg/*.go"</span><span class="token punctuation">,</span> <span class="token string">"TEST"</span><span class="token punctuation">]</span></code></pre></div>
 <p>You can use the following exclude patterns</p>
 <ol>
 <li>full paths to files <code class="language-text">src/pkg/mypkg/some.go</code></li>
@@ -738,7 +725,7 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 </tr>
 <tr>
 <td><a href="./RULES_DESCRIPTIONS.md#import-alias-naming"><code class="language-text">import-alias-naming</code></a></td>
-<td align="center">string or map[string]string (defaults to allow regex pattern ^[a-z][a-z0-9]{0,}$)</td>
+<td align="center">string or map[string]string (defaults to allow regex pattern <code class="language-text">^[a-z][a-z0-9]{0,}$</code>)</td>
 <td align="left">Conventions around the naming of import aliases.</td>
 <td align="center">no</td>
 <td align="center">no</td>
@@ -912,6 +899,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td align="center">no</td>
 </tr>
 <tr>
+<td><a href="./RULES_DESCRIPTIONS.md#time-date"><code class="language-text">time-date</code></a></td>
+<td align="center">n/a</td>
+<td align="left">Reports bad usage of <code class="language-text">time.Date</code>.</td>
+<td align="center">no</td>
+<td align="center">yes</td>
+</tr>
+<tr>
 <td><a href="./RULES_DESCRIPTIONS.md#time-equal"><code class="language-text">time-equal</code></a></td>
 <td align="center">n/a</td>
 <td align="left">Suggests to use <code class="language-text">time.Time.Equal</code> instead of <code class="language-text">==</code> and <code class="language-text">!=</code> for equality check time.</td>
@@ -959,6 +953,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td align="left">Warns on unhandled errors returned by function calls</td>
 <td align="center">no</td>
 <td align="center">yes</td>
+</tr>
+<tr>
+<td><a href="./RULES_DESCRIPTIONS.md#unnecessary-format"><code class="language-text">unnecessary-format</code></a></td>
+<td align="center">n/a</td>
+<td align="left">Identifies calls to formatting functions where the format string does not contain any formatting verbs</td>
+<td align="center">no</td>
+<td align="center">no</td>
 </tr>
 <tr>
 <td><a href="./RULES_DESCRIPTIONS.md#unnecessary-stmt"><code class="language-text">unnecessary-stmt</code></a></td>
@@ -1035,9 +1036,10 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <h2 id="configurable-rules"><a href="#configurable-rules" aria-label="configurable rules permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurable rules</h2>
 <p>Here you can find how you can configure some existing rules:</p>
 <h3 id="var-naming"><a href="#var-naming" aria-label="var naming permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">var-naming</code></h3>
-<p>This rule accepts two slices of strings, an allowlist and a blocklist of initialisms. By default, the rule behaves exactly as the alternative in <code class="language-text">golint</code> but optionally, you can relax it (see <a href="https://github.com/golang/lint/issues/89">golint/lint/issues/89</a>)</p>
+<p>This rule accepts two slices of strings, an allowlist and a blocklist of initialisms. By default, the rule behaves exactly as the alternative
+in <code class="language-text">golint</code> but optionally, you can relax it (see <a href="https://github.com/golang/lint/issues/89">golint/lint/issues/89</a>)</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.var-naming</span><span class="token punctuation">]</span>
-  <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"VM"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
+<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"VM"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
 <p>This way, revive will not warn for an identifier called <code class="language-text">customId</code> but will warn that <code class="language-text">customVm</code> should be called <code class="language-text">customVM</code>.</p>
 <h2 id="available-formatters"><a href="#available-formatters" aria-label="available formatters permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Available Formatters</h2>
 <p>This section lists all the available formatters and provides a screenshot for each one.</p>
@@ -1166,12 +1168,14 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <h3 id="checkstyle"><a href="#checkstyle" aria-label="checkstyle permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Checkstyle</h3>
 <p>The <code class="language-text">checkstyle</code> formatter produces output in a <a href="https://checkstyle.sourceforge.io/">Checkstyle-like</a> format.</p>
 <h3 id="sarif"><a href="#sarif" aria-label="sarif permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SARIF</h3>
-<p>The <code class="language-text">sarif</code>  formatter produces output in SARIF, for <em>Static Analysis Results Interchange Format</em>, a standard JSON-based format for the output of static analysis tools defined and promoted by <a href="https://www.oasis-open.org/">OASIS</a>.</p>
+<p>The <code class="language-text">sarif</code>  formatter produces output in SARIF, for <em>Static Analysis Results Interchange Format</em>,
+a standard JSON-based format for the output of static analysis tools defined and promoted by <a href="https://www.oasis-open.org/">OASIS</a>.</p>
 <p>Current supported version of the standard is <a href="https://docs.oasis-open.org/sarif/sarif/v2.1.0/csprd01/sarif-v2.1.0-csprd01.html">SARIF-v2.1.0</a>.</p>
 <h2 id="extensibility"><a href="#extensibility" aria-label="extensibility permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extensibility</h2>
 <p>The tool can be extended with custom rules or formatters. This section contains additional information on how to implement such.</p>
 <p>To extend the linter with a custom rule you can push it to this repository or use <code class="language-text">revive</code> as a library (see below)</p>
-<p>To add a custom formatter you'll have to push it to this repository or fork it. This is due to the limited <code class="language-text">-buildmode=plugin</code> support which <a href="https://golang.org/pkg/plugin/">works only on Linux (with known issues)</a>.</p>
+<p>To add a custom formatter you'll have to push it to this repository or fork it.
+This is due to the limited <code class="language-text">-buildmode=plugin</code> support which <a href="https://golang.org/pkg/plugin/">works only on Linux (with known issues)</a>.</p>
 <h3 id="writing-a-custom-rule"><a href="#writing-a-custom-rule" aria-label="writing a custom rule permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a Custom Rule</h3>
 <p>See <a href="./DEVELOPING.md">DEVELOPING.md</a> for instructions on how to write a custom rule.</p>
 <h4 id="using-revive-as-a-library"><a href="#using-revive-as-a-library" aria-label="using revive as a library permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using <code class="language-text">revive</code> as a library</h4>
@@ -1199,44 +1203,46 @@ The full rule set of <code class="language-text">revive</code> is also actionabl
 	<span class="token keyword">return</span> <span class="token string">"myRule"</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>f myRule<span class="token punctuation">)</span> <span class="token function">Apply</span><span class="token punctuation">(</span><span class="token operator">*</span>lint<span class="token punctuation">.</span>File<span class="token punctuation">,</span> lint<span class="token punctuation">.</span>Arguments<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>lint<span class="token punctuation">.</span>Failure <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span></code></pre></div>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>f myRule<span class="token punctuation">)</span> <span class="token function">Apply</span><span class="token punctuation">(</span><span class="token operator">*</span>lint<span class="token punctuation">.</span>File<span class="token punctuation">,</span> lint<span class="token punctuation">.</span>Arguments<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>lint<span class="token punctuation">.</span>Failure <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>You can still go further and use <code class="language-text">revive</code> without its CLI, as part of your library, or your CLI:</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">package</span> mylib
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
-	<span class="token string">"github.com/mgechev/revive/cli"</span>
-	<span class="token string">"github.com/mgechev/revive/revivelib"</span>
+	<span class="token string">"github.com/mgechev/revive/config"</span>
 	<span class="token string">"github.com/mgechev/revive/lint"</span>
+	<span class="token string">"github.com/mgechev/revive/revivelib"</span>
 <span class="token punctuation">)</span>
 
 <span class="token comment">// Error checking removed for clarity</span>
 <span class="token keyword">func</span> <span class="token function">LintMyFile</span><span class="token punctuation">(</span>file <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	conf<span class="token punctuation">,</span> <span class="token boolean">_</span><span class="token operator">:=</span> config<span class="token punctuation">.</span><span class="token function">GetConfig</span><span class="token punctuation">(</span><span class="token string">"../defaults.toml"</span><span class="token punctuation">)</span>
+	conf<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> config<span class="token punctuation">.</span><span class="token function">GetConfig</span><span class="token punctuation">(</span><span class="token string">"../defaults.toml"</span><span class="token punctuation">)</span>
 
 	revive<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> revivelib<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span>
-		conf<span class="token punctuation">,</span>  <span class="token comment">// Configuration file</span>
-		<span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// Set exit status</span>
-		<span class="token number">2048</span><span class="token punctuation">,</span>  <span class="token comment">// Max open files</span>
+		conf<span class="token punctuation">,</span> <span class="token comment">// Configuration file</span>
+		<span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// Set exit status</span>
+		<span class="token number">2048</span><span class="token punctuation">,</span> <span class="token comment">// Max open files</span>
 
 		<span class="token comment">// Then add as many extra rules as you need</span>
 		revivelib<span class="token punctuation">.</span><span class="token function">NewExtraRule</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>myRule<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> lint<span class="token punctuation">.</span>RuleConfig<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 	<span class="token punctuation">)</span>
 
 	failuresChan<span class="token punctuation">,</span> err <span class="token operator">:=</span> revive<span class="token punctuation">.</span><span class="token function">Lint</span><span class="token punctuation">(</span>
- 		revivelib<span class="token punctuation">.</span><span class="token function">Include</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span>
- 		revivelib<span class="token punctuation">.</span><span class="token function">Exclude</span><span class="token punctuation">(</span><span class="token string">"./fixtures"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
- 		<span class="token comment">// You can use as many revivelib.Include or revivelib.Exclude as required</span>
- 	<span class="token punctuation">)</span>
-  	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-  	 	<span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">"Shouldn't have failed: "</span> <span class="token operator">+</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  	<span class="token punctuation">}</span>
+		revivelib<span class="token punctuation">.</span><span class="token function">Include</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		revivelib<span class="token punctuation">.</span><span class="token function">Exclude</span><span class="token punctuation">(</span><span class="token string">"./fixtures"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token comment">// You can use as many revivelib.Include or revivelib.Exclude as required</span>
+	<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">"Shouldn't have failed: "</span> <span class="token operator">+</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
 
-  	<span class="token comment">// Now let's return the formatted errors</span>
+	<span class="token comment">// Now let's return the formatted errors</span>
 	failures<span class="token punctuation">,</span> exitCode<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> revive<span class="token punctuation">.</span><span class="token function">Format</span><span class="token punctuation">(</span><span class="token string">"stylish"</span><span class="token punctuation">,</span> failuresChan<span class="token punctuation">)</span>
 
-  	<span class="token comment">// failures is the string with all formatted lint error messages</span>
-  	<span class="token comment">// exit code is 0 if no errors, 1 if errors (unless config options change it)</span>
-  	<span class="token comment">// ... do something with them</span>
+	<span class="token comment">// failures is the string with all formatted lint error messages</span>
+	<span class="token comment">// exit code is 0 if no errors, 1 if errors (unless config options change it)</span>
+	<span class="token comment">// ... do something with them</span>
 <span class="token punctuation">}</span>
 
 <span class="token keyword">type</span> myRule <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
@@ -1245,33 +1251,38 @@ The full rule set of <code class="language-text">revive</code> is also actionabl
 	<span class="token keyword">return</span> <span class="token string">"myRule"</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">func</span> <span class="token punctuation">(</span>f myRule<span class="token punctuation">)</span> <span class="token function">Apply</span><span class="token punctuation">(</span><span class="token operator">*</span>lint<span class="token punctuation">.</span>File<span class="token punctuation">,</span> lint<span class="token punctuation">.</span>Arguments<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>lint<span class="token punctuation">.</span>Failure <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span></code></pre></div>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>f myRule<span class="token punctuation">)</span> <span class="token function">Apply</span><span class="token punctuation">(</span><span class="token operator">*</span>lint<span class="token punctuation">.</span>File<span class="token punctuation">,</span> lint<span class="token punctuation">.</span>Arguments<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>lint<span class="token punctuation">.</span>Failure <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
 <h3 id="custom-formatter"><a href="#custom-formatter" aria-label="custom formatter permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom Formatter</h3>
 <p>Each formatter needs to implement the following interface:</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">type</span> Formatter <span class="token keyword">interface</span> <span class="token punctuation">{</span>
 	<span class="token function">Format</span><span class="token punctuation">(</span><span class="token operator">&lt;-</span><span class="token keyword">chan</span> Failure<span class="token punctuation">,</span> Config<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
 	<span class="token function">Name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p>The <code class="language-text">Format</code> method accepts a channel of <code class="language-text">Failure</code> instances and the configuration of the enabled rules. The <code class="language-text">Name()</code> method should return a string different from the names of the already existing rules. This string is used when specifying the formatter when invoking the <code class="language-text">revive</code> CLI tool.</p>
+<p>The <code class="language-text">Format</code> method accepts a channel of <code class="language-text">Failure</code> instances and the configuration of the enabled rules.
+The <code class="language-text">Name()</code> method should return a string different from the names of the already existing rules.
+This string is used when specifying the formatter when invoking the <code class="language-text">revive</code> CLI tool.</p>
 <p>For a sample formatter, take a look at <a href="/formatter/json.go">this file</a>.</p>
 <h2 id="speed-comparison"><a href="#speed-comparison" aria-label="speed comparison permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Speed Comparison</h2>
-<p>Compared to <code class="language-text">golint</code>, <code class="language-text">revive</code> performs better because it lints the files for each individual rule into a separate goroutine. Here's a basic performance benchmark on MacBook Pro Early 2013 run on Kubernetes:</p>
+<p>Compared to <code class="language-text">golint</code>, <code class="language-text">revive</code> performs better because it lints the files for each individual rule into a separate goroutine.
+Here's a basic performance benchmark on MacBook Pro Early 2013 run on Kubernetes:</p>
 <h3 id="golint"><a href="#golint" aria-label="golint permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>golint</h3>
-<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">time</span> golint kubernetes/<span class="token punctuation">..</span>. <span class="token operator">></span> /dev/null
+<div class="gatsby-highlight" data-language="shellsession"><pre class="language-shellsession"><code class="language-shellsession">$ time golint kubernetes/... &gt; /dev/null
 
 real    0m54.837s
 user    0m57.844s
 sys     0m9.146s</code></pre></div>
 <h3 id="revives-speed"><a href="#revives-speed" aria-label="revives speed permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>revive's speed</h3>
-<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># no type checking</span>
-<span class="token function">time</span> revive -config untyped.toml kubernetes/<span class="token punctuation">..</span>. <span class="token operator">></span> /dev/null
+<div class="gatsby-highlight" data-language="shellsession"><pre class="language-shellsession"><code class="language-shellsession"># no type checking
+$ time revive -config untyped.toml kubernetes/... &gt; /dev/null
 
 real    0m8.471s
 user    0m40.721s
 sys     0m3.262s</code></pre></div>
 <p>Keep in mind that if you use rules that require type checking, the performance may drop to 2x faster than <code class="language-text">golint</code>:</p>
-<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token comment"># type checking enabled</span>
-<span class="token function">time</span> revive kubernetes/<span class="token punctuation">..</span>. <span class="token operator">></span> /dev/null
+<div class="gatsby-highlight" data-language="shellsession"><pre class="language-shellsession"><code class="language-shellsession"># type checking enabled
+$ time revive kubernetes/... &gt; /dev/null
 
 real    0m26.211s
 user    2m6.708s
@@ -1283,16 +1294,53 @@ This works for most use cases, but may not behave as expected if you use <code c
 where STDOUT is being piped to another command.</p>
 <p>To force colorization, add <code class="language-text">REVIVE_FORCE_COLOR=1</code> to the environment you're running in. For example:</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">REVIVE_FORCE_COLOR</span><span class="token operator">=</span><span class="token number">1</span> revive -formatter friendly ./<span class="token punctuation">..</span>. <span class="token operator">|</span> <span class="token function">tee</span> revive.log</code></pre></div>
+<h2 id="who-uses-revive"><a href="#who-uses-revive" aria-label="who uses revive permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Who uses Revive</h2>
+<!-- markdownlint-disable MD013 -->
+<ul>
+<li><a href="https://github.com/pingcap/tidb"><code class="language-text">tidb</code></a> - TiDB is a distributed HTAP database compatible with the MySQL protocol</li>
+<li><a href="https://github.com/grafana/grafana"><code class="language-text">grafana</code></a> - The tool for beautiful monitoring and metric analytics &#x26; dashboards for Graphite, InfluxDB &#x26; Prometheus &#x26; More</li>
+<li><a href="https://github.com/etcd-io/etcd"><code class="language-text">etcd</code></a> - Distributed reliable key-value store for the most critical data of a distributed system</li>
+<li><a href="https://github.com/uber/cadence"><code class="language-text">cadence</code></a> - Cadence is a distributed, scalable, durable, and highly available orchestration engine by Uber to execute asynchronous long-running business logic in a scalable and resilient way</li>
+<li><a href="https://github.com/MontFerret/ferret"><code class="language-text">ferret</code></a> - Declarative web scraping</li>
+<li><a href="https://github.com/gopasspw/gopass"><code class="language-text">gopass</code></a> - The slightly more awesome standard unix password manager for teams</li>
+<li><a href="https://github.com/go-gitea/gitea"><code class="language-text">gitea</code></a> - Git with a cup of tea, painless self-hosted git service</li>
+<li><a href="https://github.com/360EntSecGroup-Skylar/excelize"><code class="language-text">excelize</code></a> - Go library for reading and writing Microsoft Excel™ (XLSX) files</li>
+<li><a href="https://github.com/xuri/aurora"><code class="language-text">aurora</code></a> - aurora is a web-based Beanstalk queue server console written in Go</li>
+<li><a href="https://github.com/XiaoMi/soar"><code class="language-text">soar</code></a> - SQL Optimizer And Rewriter</li>
+<li><a href="https://github.com/pyroscope-io/pyroscope"><code class="language-text">pyroscope</code></a> - Continuous profiling platform</li>
+<li><a href="https://github.com/appleboy/gorush"><code class="language-text">gorush</code></a> - A push notification server written in Go (Golang).</li>
+<li><a href="https://github.com/moncho/dry"><code class="language-text">dry</code></a> - dry - A Docker manager for the terminal.</li>
+<li><a href="https://github.com/chenjiandongx/go-echarts"><code class="language-text">go-echarts</code></a> - The adorable charts library for Golang</li>
+<li><a href="https://github.com/reviewdog/reviewdog"><code class="language-text">reviewdog</code></a> - Automated code review tool integrated with any code analysis tools regardless of programming language</li>
+<li><a href="https://github.com/rudderlabs/rudder-server"><code class="language-text">rudder-server</code></a> - Privacy and Security focused Segment-alternative, in Golang and React.</li>
+<li><a href="https://github.com/pa-m/sklearn"><code class="language-text">sklearn</code></a> - A partial port of scikit-learn written in Go.</li>
+<li><a href="https://github.com/pseudomuto/protoc-gen-doc"><code class="language-text">protoc-gen-doc</code></a> - Documentation generator plugin for Google Protocol Buffers.</li>
+<li><a href="https://github.com/llir/llvm"><code class="language-text">llvm</code></a> - Library for interacting with LLVM IR in pure Go.</li>
+<li><a href="https://github.com/SAP/jenkins-library"><code class="language-text">jenkins-library</code></a> - Jenkins shared library for Continuous Delivery pipelines by SAP.</li>
+<li><a href="https://github.com/tikv/pd"><code class="language-text">pd</code></a> - Placement driver for TiKV.</li>
+<li><a href="https://github.com/shellhub-io/shellhub"><code class="language-text">shellhub</code></a> - ShellHub enables teams to easily access any Linux device behind firewall and NAT.</li>
+<li><a href="https://github.com/TheThingsNetwork/lorawan-stack"><code class="language-text">lorawan-stack</code></a> - The Things Network Stack for LoRaWAN V3</li>
+<li><a href="https://github.com/appleboy/gin-jwt"><code class="language-text">gin-jwt</code></a> - This is a JWT middleware for Gin framework.</li>
+<li><a href="https://github.com/appleboy/gofight"><code class="language-text">gofight</code></a> - Testing API Handler written in Golang.</li>
+<li><a href="https://github.com/Clivern/Beaver"><code class="language-text">Beaver</code></a> - A Real Time Messaging Server.</li>
+<li><a href="https://github.com/go-ggz/ggz"><code class="language-text">ggz</code></a> - An URL shortener service written in Golang</li>
+<li><a href="https://www.codeac.io?ref=revive"><code class="language-text">Codeac.io</code></a> - Automated code review service integrates with GitHub, Bitbucket and GitLab (even self-hosted) and helps you fight technical debt.</li>
+<li><a href="https://github.com/apache/incubator-devlake"><code class="language-text">DevLake</code></a> - Apache DevLake is an open-source dev data platform to ingest, analyze, and visualize the fragmented data from DevOps tools，which can distill insights to improve engineering productivity.</li>
+<li><a href="https://github.com/cinar/checker"><code class="language-text">checker</code></a> - Checker helps validating user input through rules defined in struct tags or directly through functions.</li>
+<li>[<code class="language-text">milvus</code>](<a href="https://github.com/mi">https://github.com/mi</a>, storage for next generation AI applications.</li>
+<li><a href="https://github.com/cinar/indicator"><code class="language-text">indicator</code></a> - Indicator provides various technical analysis indicators, strategies, and a backtesting framework.</li>
+</ul>
+<!-- markdownlint-enable MD013 -->
+<p><em>Open a PR to add your project</em>.</p>
 <h2 id="contributors"><a href="#contributors" aria-label="contributors permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contributors</h2>
+<h3 id="maintainers"><a href="#maintainers" aria-label="maintainers permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Maintainers</h3>
 <table>
 <thead>
 <tr>
-<th align="center"><a href="https://github.com/mgechev"><img alt="mgechev" src="https://avatars.githubusercontent.com/u/455023?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/chavacava"><img alt="chavacava" src="https://avatars.githubusercontent.com/u/25788468?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/denisvmedia"><img alt="denisvmedia" src="https://avatars.githubusercontent.com/u/5462781?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/mfederowicz"><img alt="mfederowicz" src="https://avatars.githubusercontent.com/u/57678185?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/xuri"><img alt="xuri" src="https://avatars.githubusercontent.com/u/2809468?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/alexandear"><img alt="alexandear" src="https://avatars.githubusercontent.com/u/3228886?v=4&amp;s=117" width="117"></a></th>
+<th align="center"><a href="https://github.com/mgechev"><img alt="mgechev" src="https://avatars.githubusercontent.com/u/455023?v=4&amp;s=100" width="100"></a></th>
+<th align="center"><a href="https://github.com/chavacava"><img alt="chavacava" src="https://avatars.githubusercontent.com/u/25788468?v=4&amp;s=100" width="100"></a></th>
+<th align="center"><a href="https://github.com/denisvmedia"><img alt="denisvmedia" src="https://avatars.githubusercontent.com/u/5462781?v=4&amp;s=100" width="100"></a></th>
+<th align="center"><a href="https://github.com/alexandear"><img alt="alexandear" src="https://avatars.githubusercontent.com/u/3228886?v=4&amp;s=100" width="100"></a></th>
 </tr>
 </thead>
 <tbody>
@@ -1300,403 +1348,19 @@ where STDOUT is being piped to another command.</p>
 <td align="center"><a href="https://github.com/mgechev">mgechev</a></td>
 <td align="center"><a href="https://github.com/chavacava">chavacava</a></td>
 <td align="center"><a href="https://github.com/denisvmedia">denisvmedia</a></td>
-<td align="center"><a href="https://github.com/mfederowicz">mfederowicz</a></td>
-<td align="center"><a href="https://github.com/xuri">xuri</a></td>
 <td align="center"><a href="https://github.com/alexandear">alexandear</a></td>
 </tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/ldez"><img alt="ldez" src="https://avatars.githubusercontent.com/u/5674651?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/doniacld"><img alt="doniacld" src="https://avatars.githubusercontent.com/u/19799268?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/Clivern"><img alt="Clivern" src="https://avatars.githubusercontent.com/u/1634427?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/morphy2k"><img alt="morphy2k" src="https://avatars.githubusercontent.com/u/4280578?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/bernhardreisenberger"><img alt="bernhardreisenberger" src="https://avatars.githubusercontent.com/u/5809300?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/dshemin"><img alt="dshemin" src="https://avatars.githubusercontent.com/u/11780307?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/ldez">ldez</a></td>
-<td align="center"><a href="https://github.com/doniacld">doniacld</a></td>
-<td align="center"><a href="https://github.com/Clivern">Clivern</a></td>
-<td align="center"><a href="https://github.com/morphy2k">morphy2k</a></td>
-<td align="center"><a href="https://github.com/bernhardreisenberger">bernhardreisenberger</a></td>
-<td align="center"><a href="https://github.com/dshemin">dshemin</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/butuzov"><img alt="butuzov" src="https://avatars.githubusercontent.com/u/651824?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/comdiv"><img alt="comdiv" src="https://avatars.githubusercontent.com/u/2387862?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/heynemann"><img alt="heynemann" src="https://avatars.githubusercontent.com/u/60965?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/gsamokovarov"><img alt="gsamokovarov" src="https://avatars.githubusercontent.com/u/604618?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/mdelah"><img alt="mdelah" src="https://avatars.githubusercontent.com/u/4904544?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/tymonx"><img alt="tymonx" src="https://avatars.githubusercontent.com/u/8367378?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/butuzov">butuzov</a></td>
-<td align="center"><a href="https://github.com/comdiv">comdiv</a></td>
-<td align="center"><a href="https://github.com/heynemann">heynemann</a></td>
-<td align="center"><a href="https://github.com/gsamokovarov">gsamokovarov</a></td>
-<td align="center"><a href="https://github.com/mdelah">mdelah</a></td>
-<td align="center"><a href="https://github.com/tymonx">tymonx</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/sina-devel"><img alt="sina-devel" src="https://avatars.githubusercontent.com/u/61763643?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/rawen17"><img alt="rawen17" src="https://avatars.githubusercontent.com/u/36483900?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/dominiquelefevre"><img alt="dominiquelefevre" src="https://avatars.githubusercontent.com/u/54854047?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/git-hulk"><img alt="git-hulk" src="https://avatars.githubusercontent.com/u/4987594?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/shmsr"><img alt="shmsr" src="https://avatars.githubusercontent.com/u/51480165?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/ytnsym"><img alt="ytnsym" src="https://avatars.githubusercontent.com/u/57400690?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/sina-devel">sina-devel</a></td>
-<td align="center"><a href="https://github.com/rawen17">rawen17</a></td>
-<td align="center"><a href="https://github.com/dominiquelefevre">dominiquelefevre</a></td>
-<td align="center"><a href="https://github.com/git-hulk">git-hulk</a></td>
-<td align="center"><a href="https://github.com/shmsr">shmsr</a></td>
-<td align="center"><a href="https://github.com/ytnsym">ytnsym</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/zimmski"><img alt="zimmski" src="https://avatars.githubusercontent.com/u/1847950?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/mapreal19"><img alt="mapreal19" src="https://avatars.githubusercontent.com/u/3055997?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/cce"><img alt="cce" src="https://avatars.githubusercontent.com/u/51567?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/skaji"><img alt="skaji" src="https://avatars.githubusercontent.com/u/1589550?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/ccoVeille"><img alt="ccoVeille" src="https://avatars.githubusercontent.com/u/3875889?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/tamird"><img alt="tamird" src="https://avatars.githubusercontent.com/u/1535036?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/zimmski">zimmski</a></td>
-<td align="center"><a href="https://github.com/mapreal19">mapreal19</a></td>
-<td align="center"><a href="https://github.com/cce">cce</a></td>
-<td align="center"><a href="https://github.com/skaji">skaji</a></td>
-<td align="center"><a href="https://github.com/ccoVeille">ccoVeille</a></td>
-<td align="center"><a href="https://github.com/tamird">tamird</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/markelog"><img alt="markelog" src="https://avatars.githubusercontent.com/u/945528?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/mihaitodor"><img alt="mihaitodor" src="https://avatars.githubusercontent.com/u/788216?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/dvejmz"><img alt="dvejmz" src="https://avatars.githubusercontent.com/u/9487006?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/abeltay"><img alt="abeltay" src="https://avatars.githubusercontent.com/u/15604207?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/damif94"><img alt="damif94" src="https://avatars.githubusercontent.com/u/29461526?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/Groxx"><img alt="Groxx" src="https://avatars.githubusercontent.com/u/77197?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/markelog">markelog</a></td>
-<td align="center"><a href="https://github.com/mihaitodor">mihaitodor</a></td>
-<td align="center"><a href="https://github.com/dvejmz">dvejmz</a></td>
-<td align="center"><a href="https://github.com/abeltay">abeltay</a></td>
-<td align="center"><a href="https://github.com/damif94">damif94</a></td>
-<td align="center"><a href="https://github.com/Groxx">Groxx</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/StephenButtolph"><img alt="StephenButtolph" src="https://avatars.githubusercontent.com/u/22109487?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/StephenBrown2"><img alt="StephenBrown2" src="https://avatars.githubusercontent.com/u/1148665?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/lsytj0413"><img alt="lsytj0413" src="https://avatars.githubusercontent.com/u/6871552?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/qascade"><img alt="qascade" src="https://avatars.githubusercontent.com/u/54154054?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/ridvansumset"><img alt="ridvansumset" src="https://avatars.githubusercontent.com/u/26631560?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/rliebz"><img alt="rliebz" src="https://avatars.githubusercontent.com/u/5321575?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/StephenButtolph">StephenButtolph</a></td>
-<td align="center"><a href="https://github.com/StephenBrown2">StephenBrown2</a></td>
-<td align="center"><a href="https://github.com/lsytj0413">lsytj0413</a></td>
-<td align="center"><a href="https://github.com/qascade">qascade</a></td>
-<td align="center"><a href="https://github.com/ridvansumset">ridvansumset</a></td>
-<td align="center"><a href="https://github.com/rliebz">rliebz</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/rdeusser"><img alt="rdeusser" src="https://avatars.githubusercontent.com/u/5935071?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/rmarku"><img alt="rmarku" src="https://avatars.githubusercontent.com/u/1113370?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/rnikoopour"><img alt="rnikoopour" src="https://avatars.githubusercontent.com/u/7692789?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/rafamadriz"><img alt="rafamadriz" src="https://avatars.githubusercontent.com/u/67771985?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/paco0x"><img alt="paco0x" src="https://avatars.githubusercontent.com/u/6123425?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/pa-m"><img alt="pa-m" src="https://avatars.githubusercontent.com/u/5503106?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/rdeusser">rdeusser</a></td>
-<td align="center"><a href="https://github.com/rmarku">rmarku</a></td>
-<td align="center"><a href="https://github.com/rnikoopour">rnikoopour</a></td>
-<td align="center"><a href="https://github.com/rafamadriz">rafamadriz</a></td>
-<td align="center"><a href="https://github.com/paco0x">paco0x</a></td>
-<td align="center"><a href="https://github.com/pa-m">pa-m</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/cinar"><img alt="cinar" src="https://avatars.githubusercontent.com/u/1754092?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/natefinch"><img alt="natefinch" src="https://avatars.githubusercontent.com/u/3185864?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/nunnatsa"><img alt="nunnatsa" src="https://avatars.githubusercontent.com/u/60659093?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/michalhisim"><img alt="michalhisim" src="https://avatars.githubusercontent.com/u/764249?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/zeripath"><img alt="zeripath" src="https://avatars.githubusercontent.com/u/1824502?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/y-yagi"><img alt="y-yagi" src="https://avatars.githubusercontent.com/u/987638?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/cinar">cinar</a></td>
-<td align="center"><a href="https://github.com/natefinch">natefinch</a></td>
-<td align="center"><a href="https://github.com/nunnatsa">nunnatsa</a></td>
-<td align="center"><a href="https://github.com/michalhisim">michalhisim</a></td>
-<td align="center"><a href="https://github.com/zeripath">zeripath</a></td>
-<td align="center"><a href="https://github.com/y-yagi">y-yagi</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center">[&#x3C;img alt="techknowlogick" src="<a href="https://avatars.githubusercontent.com/u/164techknowlogick">https://avatars.githubusercontent.com/u/164techknowlogick</a>)</th>
-<th align="center"><a href="https://github.com/okhowang"><img alt="okhowang" src="https://avatars.githubusercontent.com/u/3352585?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/meanguy"><img alt="meanguy" src="https://avatars.githubusercontent.com/u/78570571?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/likyh"><img alt="likyh" src="https://avatars.githubusercontent.com/u/3294100?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/kerneltravel"><img alt="kerneltravel" src="https://avatars.githubusercontent.com/u/437879?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/jmckenzieark"><img alt="jmckenzieark" src="https://avatars.githubusercontent.com/u/70923399?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/techknowlogick">techknowlogick</a></td>
-<td align="center"><a href="https://github.com/okhowang">okhowang</a></td>
-<td align="center"><a href="https://github.com/meanguy">meanguy</a></td>
-<td align="center"><a href="https://github.com/likyh">likyh</a></td>
-<td align="center"><a href="https://github.com/kerneltravel">kerneltravel</a></td>
-<td align="center"><a href="https://github.com/jmckenzieark">jmckenzieark</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/haya14busa"><img alt="haya14busa" src="https://avatars.githubusercontent.com/u/3797062?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/fregin"><img alt="fregin" src="https://avatars.githubusercontent.com/u/23256240?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/ydah"><img alt="ydah" src="https://avatars.githubusercontent.com/u/13041216?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/WillAbides"><img alt="WillAbides" src="https://avatars.githubusercontent.com/u/233500?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/heyvito"><img alt="heyvito" src="https://avatars.githubusercontent.com/u/77198?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/VincentBaron"><img alt="VincentBaron" src="https://avatars.githubusercontent.com/u/58427099?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/haya14busa">haya14busa</a></td>
-<td align="center"><a href="https://github.com/fregin">fregin</a></td>
-<td align="center"><a href="https://github.com/ydah">ydah</a></td>
-<td align="center"><a href="https://github.com/WillAbides">WillAbides</a></td>
-<td align="center"><a href="https://github.com/heyvito">heyvito</a></td>
-<td align="center"><a href="https://github.com/VincentBaron">VincentBaron</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/scop"><img alt="scop" src="https://avatars.githubusercontent.com/u/109152?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/vkrol"><img alt="vkrol" src="https://avatars.githubusercontent.com/u/153412?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/KirillSluchaev"><img alt="KirillSluchaev" src="https://avatars.githubusercontent.com/u/58340009?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/Jarema"><img alt="Jarema" src="https://avatars.githubusercontent.com/u/7369771?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/tartale"><img alt="tartale" src="https://avatars.githubusercontent.com/u/9323250?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/tmzane"><img alt="tmzane" src="https://avatars.githubusercontent.com/u/73077675?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/scop">scop</a></td>
-<td align="center"><a href="https://github.com/vkrol">vkrol</a></td>
-<td align="center"><a href="https://github.com/KirillSluchaev">KirillSluchaev</a></td>
-<td align="center"><a href="https://github.com/Jarema">Jarema</a></td>
-<td align="center"><a href="https://github.com/tartale">tartale</a></td>
-<td align="center"><a href="https://github.com/tmzane">tmzane</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/felipedavid"><img alt="felipedavid" src="https://avatars.githubusercontent.com/u/75049173?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/euank"><img alt="euank" src="https://avatars.githubusercontent.com/u/2147649?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/Entuazism"><img alt="Entuazism" src="https://avatars.githubusercontent.com/u/56657856?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/Juneezee"><img alt="Juneezee" src="https://avatars.githubusercontent.com/u/20135478?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/echoix"><img alt="echoix" src="https://avatars.githubusercontent.com/u/27212526?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/EXHades"><img alt="EXHades" src="https://avatars.githubusercontent.com/u/22260242?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/felipedavid">felipedavid</a></td>
-<td align="center"><a href="https://github.com/euank">euank</a></td>
-<td align="center"><a href="https://github.com/Entuazism">Entuazism</a></td>
-<td align="center"><a href="https://github.com/Juneezee">Juneezee</a></td>
-<td align="center"><a href="https://github.com/echoix">echoix</a></td>
-<td align="center"><a href="https://github.com/EXHades">EXHades</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/petethepig"><img alt="petethepig" src="https://avatars.githubusercontent.com/u/662636?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/Dirk007"><img alt="Dirk007" src="https://avatars.githubusercontent.com/u/17194484?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/yangdiangzb"><img alt="yangdiangzb" src="https://avatars.githubusercontent.com/u/16643665?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/derekperkins"><img alt="derekperkins" src="https://avatars.githubusercontent.com/u/3588778?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/bboreham"><img alt="bboreham" src="https://avatars.githubusercontent.com/u/8125524?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/attiss"><img alt="attiss" src="https://avatars.githubusercontent.com/u/23562566?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/petethepig">petethepig</a></td>
-<td align="center"><a href="https://github.com/Dirk007">Dirk007</a></td>
-<td align="center"><a href="https://github.com/yangdiangzb">yangdiangzb</a></td>
-<td align="center"><a href="https://github.com/derekperkins">derekperkins</a></td>
-<td align="center"><a href="https://github.com/bboreham">bboreham</a></td>
-<td align="center"><a href="https://github.com/attiss">attiss</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/hatamiarash7"><img alt="hatamiarash7" src="https://avatars.githubusercontent.com/u/16325641?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/Aragur"><img alt="Aragur" src="https://avatars.githubusercontent.com/u/11004008?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/amincheloh"><img alt="amincheloh" src="https://avatars.githubusercontent.com/u/1217397?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/kulti"><img alt="kulti" src="https://avatars.githubusercontent.com/u/1286683?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/Abirdcfly"><img alt="Abirdcfly" src="https://avatars.githubusercontent.com/u/5100555?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/abhinav"><img alt="abhinav" src="https://avatars.githubusercontent.com/u/41730?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/hatamiarash7">hatamiarash7</a></td>
-<td align="center"><a href="https://github.com/Aragur">Aragur</a></td>
-<td align="center"><a href="https://github.com/amincheloh">amincheloh</a></td>
-<td align="center"><a href="https://github.com/kulti">kulti</a></td>
-<td align="center"><a href="https://github.com/Abirdcfly">Abirdcfly</a></td>
-<td align="center"><a href="https://github.com/abhinav">abhinav</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/r-ricci"><img alt="r-ricci" src="https://avatars.githubusercontent.com/u/52817765?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/mmcloughlin"><img alt="mmcloughlin" src="https://avatars.githubusercontent.com/u/7133685?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/mathieu-aubin"><img alt="mathieu-aubin" src="https://avatars.githubusercontent.com/u/15820228?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/martinsirbe"><img alt="martinsirbe" src="https://avatars.githubusercontent.com/u/13367583?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/avorima"><img alt="avorima" src="https://avatars.githubusercontent.com/u/15158349?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/moukoublen"><img alt="moukoublen" src="https://avatars.githubusercontent.com/u/1380039?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/r-ricci">r-ricci</a></td>
-<td align="center"><a href="https://github.com/mmcloughlin">mmcloughlin</a></td>
-<td align="center"><a href="https://github.com/mathieu-aubin">mathieu-aubin</a></td>
-<td align="center"><a href="https://github.com/martinsirbe">martinsirbe</a></td>
-<td align="center"><a href="https://github.com/avorima">avorima</a></td>
-<td align="center"><a href="https://github.com/moukoublen">moukoublen</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/very-amused"><img alt="very-amused" src="https://avatars.githubusercontent.com/u/44382255?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/johnrichardrinehart"><img alt="johnrichardrinehart" src="https://avatars.githubusercontent.com/u/6321578?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/walles"><img alt="walles" src="https://avatars.githubusercontent.com/u/158201?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/jefersonf"><img alt="jefersonf" src="https://avatars.githubusercontent.com/u/3049540?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/jamesmaidment"><img alt="jamesmaidment" src="https://avatars.githubusercontent.com/u/2050324?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/jalaziz"><img alt="jalaziz" src="https://avatars.githubusercontent.com/u/247849?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/very-amused">very-amused</a></td>
-<td align="center"><a href="https://github.com/johnrichardrinehart">johnrichardrinehart</a></td>
-<td align="center"><a href="https://github.com/walles">walles</a></td>
-<td align="center"><a href="https://github.com/jefersonf">jefersonf</a></td>
-<td align="center"><a href="https://github.com/jamesmaidment">jamesmaidment</a></td>
-<td align="center"><a href="https://github.com/jalaziz">jalaziz</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/grongor"><img alt="grongor" src="https://avatars.githubusercontent.com/u/972493?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/tie"><img alt="tie" src="https://avatars.githubusercontent.com/u/14792994?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/quasilyte"><img alt="quasilyte" src="https://avatars.githubusercontent.com/u/6286655?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/davidhsingyuchen"><img alt="davidhsingyuchen" src="https://avatars.githubusercontent.com/u/17587061?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/gfariasalves-ionos"><img alt="gfariasalves-ionos" src="https://avatars.githubusercontent.com/u/112630064?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/gburanov"><img alt="gburanov" src="https://avatars.githubusercontent.com/u/2969603?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/grongor">grongor</a></td>
-<td align="center"><a href="https://github.com/tie">tie</a></td>
-<td align="center"><a href="https://github.com/quasilyte">quasilyte</a></td>
-<td align="center"><a href="https://github.com/davidhsingyuchen">davidhsingyuchen</a></td>
-<td align="center"><a href="https://github.com/gfariasalves-ionos">gfariasalves-ionos</a></td>
-<td align="center"><a href="https://github.com/gburanov">gburanov</a></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th align="center"><a href="https://github.com/ginglis13"><img alt="ginglis13" src="https://avatars.githubusercontent.com/u/43075615?v=4&amp;s=117" width="117"></a></th>
-<th align="center"><a href="https://github.com/flesser"><img alt="flesser" src="https://avatars.githubusercontent.com/u/510681?v=4&amp;s=117" width="117"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="https://github.com/ginglis13">ginglis13</a></td>
-<td align="center"><a href="https://github.com/flesser">flesser</a></td>
-</tr>
-</tbody>
-</table>
+<h3 id="all"><a href="#all" aria-label="all permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>All</h3>
+<p>This project exists thanks to all the people who contribute.</p>
+<a href="https://github.com/mgechev/revive/graphs/contributors">
+  <img alt="All Contributors" src="https://contrib.rocks/image?repo=mgechev/revive&amp;max=500">
+</a>
 <h2 id="license"><a href="#license" aria-label="license permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
 <p>MIT
-(<a href="https://github.com/flesser">https://github.com/flesser</a>) |</p>
+gechev/revive&#x26;max=500" />
+</a></p>
 <h2 id="license-1"><a href="#license-1" aria-label="license 1 permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
 <p>MIT</p></div></div></div></div></div></div></div></div></div><script>
   
