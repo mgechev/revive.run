@@ -136,6 +136,7 @@
 <li><a href="#unused-receiver">unused-receiver</a></li>
 <li><a href="#use-any">use-any</a></li>
 <li><a href="#use-errors-new">use-errors-new</a></li>
+<li><a href="#use-fmt-print">use-fmt-print</a></li>
 <li><a href="#useless-break">useless-break</a></li>
 <li><a href="#var-declaration">var-declaration</a></li>
 <li><a href="#var-naming">var-naming</a></li>
@@ -718,14 +719,16 @@ If you need to inverse the semantics you can add a <code class="language-text">!
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span></code></pre></div>
 <h2 id="string-of-int"><a href="#string-of-int" aria-label="string of int permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>string-of-int</h2>
-<p><em>Description</em>: Explicit type conversion <code class="language-text">string(i)</code> where <code class="language-text">i</code> has an integer type other than <code class="language-text">rune</code> might behave not as expected by the developer
+<p><em>Description</em>: Explicit type conversion <code class="language-text">string(i)</code> where <code class="language-text">i</code> has an integer type otht behave not as expected by the developer
 (e.g. <code class="language-text">string(42)</code> is not <code class="language-text">&quot;42&quot;</code>). This rule spot that kind of suspicious conversions.</p>
 <p><em>Configuration</em>: N/A</p>
 <h2 id="struct-tag"><a href="#struct-tag" aria-label="struct tag permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct-tag</h2>
 <p><em>Description</em>: Struct tags are not checked at compile time.
 This rule spots errors in struct tags of the following types:
 asn1, bson, datastore, default, json, mapstructure, properties, protobuf, required, toml, url, validate, xml, yaml.</p>
-<p><em>Configuration</em>: (optional) list of user defined optaccept the <code class="language-text">inline</code> option in JSON tags (and <code class="language-text">outline</code> and <code class="language-text">gnu</code> in BSON tags) you must provide the following configuration</p>
+<p><em>Configuration</em>: (optional) list of user defined options.</p>
+<p>Example:
+To accept the <code class="language-text">inline</code> option in JSON tags (and <code class="language-text">outline</code> and <code class="language-text">gnu</code> in BSON tags) you must provide the following configuration</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.struct-tag</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"json,inline"</span><span class="token punctuation">,</span> <span class="token string">"bson,outline,gnu"</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="superfluous-else"><a href="#superfluous-else" aria-label="superfluous else permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>superfluous-else</h2>
@@ -743,8 +746,29 @@ This rule highlights redundant <em>else-blocks</em> that can be eliminated from 
 <h2 id="time-date"><a href="#time-date" aria-label="time date permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>time-date</h2>
 <p><em>Description</em>: Reports bad usage of <code class="language-text">time.Date</code>.</p>
 <p><em>Configuration</em>: N/A</p>
-<p><em>Example</em>:</p>
-<p>Here the leading zeros are defining integers with octal notation</p>
+<p><em>Examples</em>:</p>
+<ul>
+<li>
+<p>Invalid dates reporting:</p>
+<ul>
+<li>0 for the month or day argument</li>
+<li>out of bounds argument for the month (12), day (31), hour (23), minute (59), or seconds (59)</li>
+<li>an invalid date: 31st of June, 29th of February in 2023, ...</li>
+</ul>
+</li>
+<li>
+<p>Non-decimal integers are used as arguments</p>
+<p>This includes:</p>
+<ul>
+<li>leading zero notation like using 00 for hours, minutes, and seconds.</li>
+<li>octal notation 0o1, 0o0 that are often caused by using gofumpt on leading zero notation.</li>
+<li>padding zeros such as 00123456 that are source of bugs.</li>
+<li>... and some other use cases.</li>
+</ul>
+</li>
+</ul>
+<details>
+<summary>More information about what is detected and reported</summary>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">import</span> <span class="token string">"time"</span>
 
 <span class="token keyword">var</span> <span class="token punctuation">(</span>
@@ -776,6 +800,7 @@ This rule highlights redundant <em>else-blocks</em> that can be eliminated from 
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">import</span> <span class="token string">"time"</span>
 
 <span class="token keyword">var</span> <span class="token boolean">_</span> <span class="token operator">=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2023</span><span class="token punctuation">,</span> <span class="token number">01</span><span class="token punctuation">,</span> <span class="token number">02</span><span class="token punctuation">,</span> <span class="token number">03</span><span class="token punctuation">,</span> <span class="token number">04</span><span class="token punctuation">,</span> <span class="token number">00</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>UTC<span class="token punctuation">)</span></code></pre></div>
+</details>
 <h2 id="time-equal"><a href="#time-equal" aria-label="time equal permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>time-equal</h2>
 <p><em>Description</em>: This rule warns when using <code class="language-text">==</code> and <code class="language-text">!=</code> for equality check <code class="language-text">time.Time</code> and suggest to <code class="language-text">time.time.Equal</code> method,
 for about information follow <a href="https://pkg.go.dev/time#Time">this link</a></p>
@@ -856,7 +881,12 @@ Supports arguments with single of <code class="language-text">map[string]any</co
 <p><em>Description</em>: Since Go 1.18, <code class="language-text">interface{}</code> has an alias: <code class="language-text">any</code>. This rule proposes to replace instances of <code class="language-text">interface{}</code> with <code class="language-text">any</code>.</p>
 <p><em>Configuration</em>: N/A</p>
 <h2 id="use-errors-new"><a href="#use-errors-new" aria-label="use errors new permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>use-errors-new</h2>
-<p><em>Description</em>: This rules identifies calls to <code class="language-text">fmt.Errorf</code> that can be safely replaced by, the more efficient, <code class="language-text">errors.New</code>.</p>
+<p><em>Description</em>: This rule identifies calls to <code class="language-text">fmt.Errorf</code> that can be safely replaced by, the more efficient, <code class="language-text">errors.New</code>.</p>
+<p><em>Configuration</em>: N/A</p>
+<h2 id="use-fmt-print"><a href="#use-fmt-print" aria-label="use fmt print permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>use-fmt-print</h2>
+<p><em>Description</em>: This rule proposes to replace calls to built-in <code class="language-text">print</code> and <code class="language-text">println</code> with their equivalents from <code class="language-text">fmt</code> standard package.</p>
+<p><code class="language-text">print</code> and <code class="language-text">println</code> built-in functions are not recommended for use-cases other than
+<a href="https://go.dev/ref/spec#Bootstrapping">language boostraping and are not guaranteed to stay in the language</a>.</p>
 <p><em>Configuration</em>: N/A</p>
 <h2 id="useless-break"><a href="#useless-break" aria-label="useless break permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useless-break</h2>
 <p><em>Description</em>: This rule warns on useless <code class="language-text">break</code> statements in case clauses of switch and select statements. Go,
