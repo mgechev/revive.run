@@ -86,8 +86,11 @@ If you disable them in the config file, revive will run over 6x faster than goli
 <p><a href="#revive">revive</a></p>
 <ul>
 <li><a href="#installation">Installation</a></li>
-<li><a href="#usage">Usage</a></li>
+<li><a href="#homebrew">Homebrew</a></li>
+<li><a href="#install-from-sources">Install from Sources</a></li>
 <li><a href="#docker">Docker</a></li>
+<li><a href="#manual-binary-download">Manual Binary Download</a></li>
+<li><a href="#usage">Usage</a></li>
 <li><a href="#bazel">Bazel</a></li>
 <li><a href="#text-editors">Text Editors</a></li>
 <li><a href="#github-actions">GitHub Actions</a></li>
@@ -141,24 +144,44 @@ If you disable them in the config file, revive will run over 6x faster than goli
 </ul>
 <!-- /TOC -->
 <h2 id="installation"><a href="#installation" aria-label="installation permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p><code class="language-text">revive</code> is available inside the majority of package managers.</p>
+<p><a href="https://repology.org/project/revive/versions"><img alt="Repology packaging status" src="https://repology.org/badge/vertical-allrepos/revive.svg"></a></p>
+<h3 id="homebrew"><a href="#homebrew" aria-label="homebrew permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Homebrew</h3>
+<p>Install <code class="language-text">revive</code> using <a href="https://brew.sh/">brew</a>:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> revive</code></pre></div>
+<p>To upgrade to the latest version:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">brew upgrade revive</code></pre></div>
+<h3 id="install-from-sources"><a href="#install-from-sources" aria-label="install from sources permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install from Sources</h3>
+<p>Install the latest stable release directly from source:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">go <span class="token function">install</span> github.com/mgechev/revive@latest</code></pre></div>
-<p>or get a released executable from the <a href="https://github.com/mgechev/revive/releases">Releases</a> page.</p>
-<p>You can install the main branch (including the last commit) with:</p>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">go <span class="token function">install</span> github.com/mgechev/revive@master</code></pre></div>
+<p>To install the latest commit from the main branch:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">go <span class="token function">install</span> github.com/mgechev/revive@HEAD</code></pre></div>
+<h3 id="docker"><a href="#docker" aria-label="docker permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h3>
+<p>You can run <code class="language-text">revive</code> using Docker to avoid installing it directly on your system:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker run -v <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>"</span>:/var/YOUR_REPOSITORY ghcr.io/mgechev/revive:v1.10.0 -config /var/YOUR_REPOSITORY/revive.toml -formatter stylish ./var/YOUR_REPOSITORY/<span class="token punctuation">..</span>.</code></pre></div>
+<p><em>Note</em>: Replace <code class="language-text">YOUR_REPOSITORY</code> with the path to your repository.</p>
+<p>A volume must be mounted to share the current repository with the container.
+For more details, refer to the <a href="https://docs.docker.com/storage/bind-mounts/">bind mounts Docker documentation</a>.</p>
+<ul>
+<li><code class="language-text">-v</code>: Mounts the current directory (<code class="language-text">$(pwd)</code>) to <code class="language-text">/var/YOUR_REPOSITORY</code> inside the container.</li>
+<li><code class="language-text">ghcr.io/mgechev/revive:v1.10.0</code>: Specifies the Docker image and its version.</li>
+<li><code class="language-text">revive</code>: The command to run inside the container.</li>
+<li>Flags like <code class="language-text">-config</code> and <code class="language-text">-formatter</code> are the same as when using the binary directly.</li>
+</ul>
+<h3 id="manual-binary-download"><a href="#manual-binary-download" aria-label="manual binary download permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manual Binary Download</h3>
+<p>Download the precompiled binary from the <a href="https://github.com/mgechev/revive/releases">Releases page</a>:</p>
+<ol>
+<li>Select the appropriate binary for your OS and architecture.</li>
+<li>Extract the binary and move it to a directory in your <code class="language-text">PATH</code> (e.g., <code class="language-text">/usr/local/bin</code>).</li>
+<li>Verify installation:</li>
+</ol>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">revive -version</code></pre></div>
 <h2 id="usage"><a href="#usage" aria-label="usage permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
-<p>Since the default behavior of <code class="language-text">revive</code> is compatible with <code class="language-text">golint</code>, without providing any additional flags,the only difference you'd notice is faster execution.</p>
+<p>Since the default behavior of <code class="language-text">revive</code> is compatible with <code class="language-text">golint</code>, without providing any additional flags,
+the only difference you'd notice is faster execution.</p>
 <p><code class="language-text">revive</code> supports a <code class="language-text">-config</code> flag whose value should correspond to a TOML file describing which rules to use for <code class="language-text">revive</code>'s linting.
 If not provided, <code class="language-text">revive</code> will try to use a global config file (assumed to be located at <code class="language-text">$HOME/revive.toml</code>).
 Otherwise, if no configuration TOML file is found then <code class="language-text">revive</code> uses a built-in set of default linting rules.</p>
-<h3 id="docker"><a href="#docker" aria-label="docker permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h3>
-<p>A volume must be mounted to share the current repository with the container.
-Please refer to the <a href="https://docs.docker.com/storage/bind-mounts/">bind mounts Docker documentation</a></p>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker run -v <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>"</span>:/var/YOUR_REPOSITORY ghcr.io/mgechev/revive:v1.3.7 -config /var/YOUR_REPOSITORY/revive.toml -formatter stylish ./var/YOUR_REPOSITORY/<span class="token punctuation">..</span>.</code></pre></div>
-<ul>
-<li><code class="language-text">-v</code> is for the volume</li>
-<li><code class="language-text">ghcr.io/mgechev/revive:v1.3.7</code> is the image name and its version corresponds to <code class="language-text">revive</code> command</li>
-<li>The provided flags are the same as the binary usage.</li>
-</ul>
 <h3 id="bazel"><a href="#bazel" aria-label="bazel permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bazel</h3>
 <p>If you want to use revive with Bazel, look at the <a href="https://github.com/atlassian/bazel-tools/tree/master/gorevive">rules</a> that Atlassian maintains.</p>
 <h3 id="text-editors"><a href="#text-editors" aria-label="text editors permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Text Editors</h3>
@@ -622,6 +645,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td><a href="./RULES_DESCRIPTIONS.md#enforce-slice-style"><code class="language-text">enforce-slice-style</code></a></td>
 <td align="center">string (defaults to "any")</td>
 <td align="left">Enforces consistent usage of <code class="language-text">make([]type, 0)</code> or <code class="language-text">[]type{}</code> for slice initialization. Does not affect <code class="language-text">make(map[type]type, non_zero_len, or_non_zero_cap)</code> constructions.</td>
+<td align="center">no</td>
+<td align="center">no</td>
+</tr>
+<tr>
+<td><a href="./RULES_DESCRIPTIONS.md#enforce-switch-style"><code class="language-text">enforce-switch-style</code></a></td>
+<td align="center">[]string (defaults to enforce occurrence and position)</td>
+<td align="left">Enforces consistent usage of <code class="language-text">default</code> on <code class="language-text">switch</code> statements.</td>
 <td align="center">no</td>
 <td align="center">no</td>
 </tr>
@@ -1179,8 +1209,7 @@ in <code class="language-text">golint</code> but optionally, you can relax it (s
 a standard JSON-based format for the output of static analysis tools defined and promoted by <a href="https://www.oasis-open.org/">OASIS</a>.</p>
 <p>Current supported version of the standard is <a href="https://docs.oasis-open.org/sarif/sarif/v2.1.0/csprd01/sarif-v2.1.0-csprd01.html">SARIF-v2.1.0</a>.</p>
 <h2 id="extensibility"><a href="#extensibility" aria-label="extensibility permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extensibility</h2>
-<p>The tool can be extended with custom rules or formatters. This section contains additional information on how to implement such.</p>
-<p>To extend the linter with a custom rule you can push it to this repository or use <code class="language-text">revive</code> as a library (see below)</p>
+<p>The tool can be extended with custom rules or formatters. This section contains additional information on how to implemle you can push it to this repository or use <code class="language-text">revive</code> as a library (see below)</p>
 <p>To add a custom formatter you'll have to push it to this repository or fork it.
 This is due to the limited <code class="language-text">-buildmode=plugin</code> support which <a href="https://golang.org/pkg/plugin/">works only on Linux (with known issues)</a>.</p>
 <h3 id="writing-a-custom-rule"><a href="#writing-a-custom-rule" aria-label="writing a custom rule permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a Custom Rule</h3>
@@ -1332,7 +1361,7 @@ where STDOUT is being piped to another command.</p>
 <li><a href="https://github.com/Clivern/Beaver"><code class="language-text">Beaver</code></a> - A Real Time Messaging Server.</li>
 <li><a href="https://github.com/go-ggz/ggz"><code class="language-text">ggz</code></a> - An URL shortener service written in Golang</li>
 <li><a href="https://www.codeac.io?ref=revive"><code class="language-text">Codeac.io</code></a> - Automated code review service integrates with GitHub, Bitbucket and GitLab (even self-hosted) and helps you fight technical debt.</li>
-<li><a href="https://github.com/apache/incubator-devlake"><code class="language-text">DevLake</code></a> - Apache DevLake is an open-source dev data platform to ingest, analyze, and visualize the fragmented data from DevOps tools，g productivity.</li>
+<li><a href="https://github.com/apache/incubator-devlake"><code class="language-text">DevLake</code></a> - Apache DevLake is an open-source dev data platform to ingest, analyze, and visualize the fragmented data from DevOps tools，which can distill insights to improve engineering productivity.</li>
 <li><a href="https://github.com/cinar/checker"><code class="language-text">checker</code></a> - Checker helps validating user input through rules defined in struct tags or directly through functions.</li>
 <li><a href="https://github.com/milvus-io/milvus"><code class="language-text">milvus</code></a> - A cloud-native vector database, storage for next generation AI applications.</li>
 <li><a href="https://github.com/cinar/indicator"><code class="language-text">indicator</code></a> - Indicator provides various technical analysis indicators, strategies, and a backtesting framework.</li>
