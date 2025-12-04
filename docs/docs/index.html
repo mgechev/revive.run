@@ -105,7 +105,6 @@ If you disable them in the config file, revive will run over 6x faster than goli
 <li><a href="#sample-invocations">Sample Invocations</a></li>
 <li><a href="#comment-directives">Comment Directives</a></li>
 <li><a href="#configuration">Configuration</a></li>
-<li><a href="#default-configuration">Default Configuration</a></li>
 <li><a href="#custom-configuration">Custom Configuration</a></li>
 <li><a href="#recommended-configuration">Recommended Configuration</a></li>
 <li><a href="#rule-level-file-excludes">Rule-level file excludes</a></li>
@@ -347,6 +346,10 @@ If you skip <code class="language-text">revive:enable</code>, the linter will be
 <span class="token key property">severity</span> <span class="token punctuation">=</span> <span class="token string">"error"</span></code></pre></div>
 <p>By default <code class="language-text">revive</code> will enable only the linting rules that are named in the configuration file.
 For example, the previous configuration file makes <code class="language-text">revive</code> to enable only <em>cyclomatic</em> and <em>package-comments</em> linting rules.</p>
+<p>To enable default rules you need to use:</p>
+<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token key property">enableDefaultRules</span> <span class="token punctuation">=</span> <span class="token boolean">true</span></code></pre></div>
+<p>This will enable all rules available in <code class="language-text">golint</code> and use their default configuration (i.e. the way they are hardcoded in <code class="language-text">golint</code>).
+The default configuration of <code class="language-text">revive</code> can be found at <code class="language-text">defaults.toml</code>.</p>
 <p>To enable all available rules you need to add:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token key property">enableAllRules</span> <span class="token punctuation">=</span> <span class="token boolean">true</span></code></pre></div>
 <p>This will enable all available rules no matter what rules are named in the configuration file.</p>
@@ -390,11 +393,6 @@ and some rules are configured with particular arguments:</p>
 <span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token table class-name">rule.error-strings</span><span class="token punctuation">]</span>
 <span class="token key property">Arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"mypackage.Error"</span><span class="token punctuation">]</span></code></pre></div>
-<h3 id="default-configuration"><a href="#default-configuration" aria-label="default configuration permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Default Configuration</h3>
-<p>The default configuration of <code class="language-text">revive</code> can be found at <code class="language-text">defaults.toml</code>.
-This will enable all rules available in <code class="language-text">golint</code> and use their default configuration (i.e. the way they are hardcoded in <code class="language-text">golint</code>).</p>
-<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">revive -config defaults.toml github.com/mgechev/revive</code></pre></div>
-<p>This will use the configuration file <code class="language-text">defaults.toml</code>, the <code class="language-text">default</code> formatter, and will run linting over the <code class="language-text">github.com/mgechev/revive</code> package.</p>
 <h3 id="custom-configuration"><a href="#custom-configuration" aria-label="custom configuration permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom Configuration</h3>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">revive -config config.toml -formatter friendly github.com/mgechev/revive</code></pre></div>
 <p>This will use <code class="language-text">config.toml</code>, the <code class="language-text">friendly</code> formatter, and will run linting over the <code class="language-text">github.com/mgechev/revive</code> package.</p>
@@ -644,6 +642,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td align="center">no</td>
 </tr>
 <tr>
+<td><a href="./RULES_DESCRIPTIONS.md#epoch-naming"><code class="language-text">epoch-naming</code></a></td>
+<td align="center">n/a</td>
+<td align="left">Enforces naming conventions for epoch time variables</td>
+<td align="center">no</td>
+<td align="center">yes</td>
+</tr>
+<tr>
 <td><a href="./RULES_DESCRIPTIONS.md#enforce-map-style"><code class="language-text">enforce-map-style</code></a></td>
 <td align="center">string (defaults to "any")</td>
 <td align="left">Enforces consistent usage of <code class="language-text">make(map[type]type)</code> or <code class="language-text">map[type]type{}</code> for map initialization. Does not affect <code class="language-text">make(map[type]type, size)</code> constructions.</td>
@@ -731,6 +736,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td><a href="./RULES_DESCRIPTIONS.md#flag-parameter"><code class="language-text">flag-parameter</code></a></td>
 <td align="center">n/a</td>
 <td align="left">Warns on boolean parameters that create a control coupling</td>
+<td align="center">no</td>
+<td align="center">no</td>
+</tr>
+<tr>
+<td><a href="./RULES_DESCRIPTIONS.md#forbidden-call-in-wg-go"><code class="language-text">forbidden-call-in-wg-go</code></a></td>
+<td align="center">n/a</td>
+<td align="left">Warns on forbidden calls inside calls to wg.Go</td>
 <td align="center">no</td>
 <td align="center">no</td>
 </tr>
@@ -831,6 +843,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td align="left">Prevents redundant else statements.</td>
 <td align="center">yes</td>
 <td align="center">no</td>
+</tr>
+<tr>
+<td><a href="./RULES_DESCRIPTIONS.md#inefficient-map-lookup"><code class="language-text">inefficient-map-lookup</code></a></td>
+<td align="center">n/a</td>
+<td align="left">Spots iterative searches for a key in a map</td>
+<td align="center">no</td>
+<td align="center">yes</td>
 </tr>
 <tr>
 <td><a href="./RULES_DESCRIPTIONS.md#line-length-limit"><code class="language-text">line-length-limit</code></a></td>
@@ -1036,6 +1055,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td align="center">yes</td>
 </tr>
 <tr>
+<td><a href="./RULES_DESCRIPTIONS.md#unnecessary-if"><code class="language-text">unnecessary-if</code></a></td>
+<td align="center">n/a</td>
+<td align="left">Identifies <code class="language-text">if-else</code> statements that can be replaced by simpler statements</td>
+<td align="center">no</td>
+<td align="center">no</td>
+</tr>
+<tr>
 <td><a href="./RULES_DESCRIPTIONS.md#unnecessary-format"><code class="language-text">unnecessary-format</code></a></td>
 <td align="center">n/a</td>
 <td align="left">Identifies calls to formatting functions where the format string does not contain any formatting verbs</td>
@@ -1146,14 +1172,35 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <p>Here you can find how you can configure some existing rules:</p>
 <h3 id="var-naming"><a href="#var-naming" aria-label="var naming permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">var-naming</code></h3>
 <p>This rule accepts two slices of strings, an allowlist and a blocklist of initialisms. By default, the rule behaves exactly as the alternative
-in <code class="language-text">golint</code> but optionally, you can relax it (see <a href="https://github.com/golang/lint/issues/89">golint/lint/issues/89</a>)</p>
+in <code class="language-text">golint</code> but option<a href="https://github.com/golang/lint/issues/89">golint/lint/issues/89</a>)</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.var-naming</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"VM"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
 <p>This way, revive will not warn for an identifier called <code class="language-text">customId</code> but will warn that <code class="language-text">customVm</code> should be called <code class="language-text">customVM</code>.</p>
 <h2 id="available-formatters"><a href="#available-formatters" aria-label="available formatters permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Available Formatters</h2>
 <p>This section lists all the available formatters and provides a screenshot for each one.</p>
 <h3 id="friendly"><a href="#friendly" aria-label="friendly permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Friendly</h3>
-<p><img src="/i" alt="Friendly formatter"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.09037328094303%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAAB9ElEQVQoz5WS7W7aMBSGMxWqoqmVumpUo6rgF60GHSEjceI4TuyEj4AM9A52t9ttrBRWqZcwkrPjJLT7s02L9OgcS/Hj9zgxQqNT/7IOJJ+xlU9D5TOuqB8UlQWRGk9Slc6VmkznKk6mirhUua6vPBooz2OK0uLdFVbZbneOjbOj0ybnchdNl8ClAh4riMYrCOQCeLKAaLIsYCIFX8yAsARIkIBNJTgshs+uQCQMRsGPyw/XV8ab+knLdOQjT+6ByeUeybHPvWiRU4mIRe6GKa7nRX9YW16cD12ZWzTemySGjybbXrxvtY1avdGyiBautTBjUqFwlXvhohLMS1khLCF8mlta5sl8YEfZwJHQG1bCo1K4Dcf3ByFoOQrBx7FRACgEqhFlRSGYBEelMZiOyD6NhBbu/iBcFkIaoVD8JtSyau3yGeC4gAm1NDPLhLuL5svIYqvv0Bcq8yvhIeFB5kXpi1wnxDss0AkHtnxNWDtutIZEbPDe8Msu90gWjtc6aaYPQEGGotcaphkmzHQyDe79ObCLkR8L4enZ+ZXtiWeG49j+GEY0AQer7k0n/gf4uyBDkkDfCp5x5I5x0njbNEf0q8cnT3jaQ8+km27f2dz0yd+5q+iT77d35Knbs7+dv2u2DHxqyDVyi3SRm/+kW+3VjvovbP4sNxWSqUMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Friendly formatter"
+        title="Friendly formatter"
+        src="/static/06ac5a3497ead61c510af5759c8d80f2/b9e4f/formatter-friendly.png"
+        srcset="/static/06ac5a3497ead61c510af5759c8d80f2/cf440/formatter-friendly.png 148w,
+/static/06ac5a3497ead61c510af5759c8d80f2/d2d38/formatter-friendly.png 295w,
+/static/06ac5a3497ead61c510af5759c8d80f2/b9e4f/formatter-friendly.png 590w,
+/static/06ac5a3497ead61c510af5759c8d80f2/f9b6a/formatter-friendly.png 885w,
+/static/06ac5a3497ead61c510af5759c8d80f2/2d849/formatter-friendly.png 1180w,
+/static/06ac5a3497ead61c510af5759c8d80f2/93c0f/formatter-friendly.png 2036w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span></p>
 <h3 id="stylish"><a href="#stylish" aria-label="stylish permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stylish</h3>
 <p><span
       class="gatsby-resp-image-wrapper"
