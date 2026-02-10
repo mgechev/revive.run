@@ -146,6 +146,7 @@
 <li><a href="#use-any">use-any</a></li>
 <li><a href="#use-errors-new">use-errors-new</a></li>
 <li><a href="#use-fmt-print">use-fmt-print</a></li>
+<li><a href="#use-slices-sort">use-slices-sort</a></li>
 <li><a href="#use-waitgroup-go">use-waitgroup-go</a></li>
 <li><a href="#useless-break">useless-break</a></li>
 <li><a href="#useless-fallthrough">useless-fallthrough</a></li>
@@ -219,7 +220,7 @@ This rule suggests removing Boolean literals from logic expressions.</p>
 <p><em>Configuration</em>: N/A</p>
 <h2 id="call-to-gc"><a href="#call-to-gc" aria-label="call to gc permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>call-to-gc</h2>
 <p><em>Description</em>: Explicitly invoking the garbage collector is, except for specific uses in benchmarking, very dubious.</p>
-<p>The garbage collector can be configured through environment variables as <a href="https://golang.org/pkg/runtime/">described here</a>.</p>
+<p>The garbage collector can be configured through environment variables as <a href="https://pkg.go.dev/runtime">described here</a>.</p>
 <p><em>Configuration</em>: N/A</p>
 <h2 id="cognitive-complexity"><a href="#cognitive-complexity" aria-label="cognitive complexity permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cognitive-complexity</h2>
 <p><em>Description</em>: <a href="https://www.sonarsource.com/docs/CognitiveComplexity.pdf">Cognitive complexity</a> is a measure of how hard code is to understand.
@@ -400,6 +401,42 @@ By default, only relocation of <em>existing</em> jumps (i.e. from the <code clas
 <h2 id="empty-block"><a href="#empty-block" aria-label="empty block permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>empty-block</h2>
 <p><em>Description</em>: Empty blocks make code less readable and could be a symptom of a bug or unfinished refactoring.</p>
 <p><em>Configuration</em>: N/A</p>
+<h3 id="limitations"><a href="#limitations" aria-label="limitations permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Limitations</h3>
+<p>The <code class="language-text">empty-block</code> rule has limited support for detecting intentionally empty <code class="language-text">for</code> loops where the loop body is empty but the
+loop controls (<code class="language-text">Init</code>, <code class="language-text">Cond</code>, or <code class="language-text">Post</code>) contain function calls that perform the actual work.</p>
+<p>Currently, the rule only recognizes a narrow pattern:</p>
+<div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">for</span> <span class="token function">process</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Intentionally empty - process() does the work</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token keyword">range</span> processChan <span class="token punctuation">{</span>
+    <span class="token comment">// Intentionally empty - draining the channel</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>However, it will produce <strong>false positives</strong> for more complex patterns such as:</p>
+<div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token comment">// False positive: rule will warn even though this is intentional</span>
+<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> c <span class="token operator">:=</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> c<span class="token punctuation">;</span> <span class="token boolean">_</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Loop body is intentionally empty; step() does the work</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// False positive: rule will warn even though this is intentional</span>
+<span class="token keyword">for</span> p <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token function">bar</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span> p<span class="token operator">++</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Loop body is intentionally empty; bar(p) does the work</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><strong>Workaround</strong>: If you have intentionally empty <code class="language-text">for</code> loops with function calls in the loop controls, you can disable the rule
+in-place using a directive comment:</p>
+<div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token comment">//revive:disable:empty-block</span>
+<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> c <span class="token operator">:=</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> c<span class="token punctuation">;</span> <span class="token boolean">_</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Intentionally empty - step() does the work</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//revive:enable:empty-block</span></code></pre></div>
+<p>The reason for this limitation is that properly detecting whether a <code class="language-text">for</code> loop is intentionally empty requires understanding the
+<strong>semantics</strong> of the called functions (whether they have side effects, modify state, etc.), which is beyond the scope of static
+analysis that this rule performs.</p>
+<p>For more details, see:</p>
+<ul>
+<li><a href="https://github.com/mgechev/revive/issues/1622">https://github.com/mgechev/revive/issues/1622</a></li>
+<li><a href="https://github.com/mgechev/revive/issues/386">https://github.com/mgechev/revive/issues/386</a></li>
+</ul>
 <h2 id="empty-lines"><a href="#empty-lines" aria-label="empty lines permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>empty-lines</h2>
 <p><em>Description</em>: Sometimes <code class="language-text">gofmt</code> is not enough to enforce a common formatting of a code-base;
 this rule warns when there are heading or trailing newlines in code blocks.</p>
@@ -1079,7 +1116,7 @@ this rule highlights those cases.</p>
 <p><em>Description</em>: This rule checks whether a type assertion result is checked (the <code class="language-text">ok</code> value), preventing unexpected <code class="language-text">panic</code>s.</p>
 <p><em>Configuration</em>: list of key-value-pair-map (<code class="language-text">[]map[string]any</code>).</p>
 <ul>
-<li><code class="language-text">acceptIgnoredAssertionResult</code> (<code class="language-text">acceptignoredassertionresult</code>, <code class="language-text">accept-ignored-assertion-result</code>): (bool) default <code class="language-text">false</code>,
+<li><code class="language-text">acceptIgt</code> (<code class="language-text">acceptignoredassertionresult</code>, <code class="language-text">accept-ignored-assertion-result</code>): (bool) default <code class="language-text">false</code>,
 set it to <code class="language-text">true</code> to accept ignored type assertion results like this:</li>
 </ul>
 <div class="gatsby-highlight" data-language="golang"><pre class="language-golang"><code class="language-golang">foo, _ := bar(.*Baz).
@@ -1114,7 +1151,7 @@ This rule detects and warns about unconditional (direct) recursive calls.</p>
 <h2 id="unnecessary-if"><a href="#unnecessary-if" aria-label="unnecessary if permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>unnecessary-if</h2>
 <p><em>Description</em>: Detects unnecessary <code class="language-text">if-else</code> statements that return or assign a boolean value
 based on a condition and suggests a simplified, direct return or assignment.
-The <code class="language-text">if-else</code> bloause the condition itself is already a boolean expression.
+The <code class="language-text">if-else</code> block is redundant because the condition itself is already a boolean expression.
 The simplified version is immediately clearer, more idiomatic, and reduces cognitive load for the reader.</p>
 <h3 id="examples-unnecessary-if"><a href="#examples-unnecessary-if" aria-label="examples unnecessary if permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples (unnecessary-if)</h3>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">if</span> y <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
@@ -1182,6 +1219,25 @@ Supports arguments with single of <code class="language-text">map[string]any</co
 <p><em>Description</em>: This rule proposes to replace calls to built-in <code class="language-text">print</code> and <code class="language-text">println</code> with their equivalents from <code class="language-text">fmt</code> standard package.</p>
 <p><code class="language-text">print</code> and <code class="language-text">println</code> built-in functions are not recommended for use-cases other than
 <a href="https://go.dev/ref/spec#Bootstrapping">language bootstrapping and are not guaranteed to stay in the language</a>.</p>
+<p><em>Configuration</em>: N/A</p>
+<h2 id="use-slices-sort"><a href="#use-slices-sort" aria-label="use slices sort permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>use-slices-sort</h2>
+<p><em>Description</em>: Since Go 1.21 the <code class="language-text">slices</code> package proposes methods that are faster and easier to use
+than their equivalents in <code class="language-text">sort</code> package.
+The rule proposes to replace these legacy idioms with calls to the new methods.</p>
+<h3 id="examples-use-slices-sort"><a href="#examples-use-slices-sort" aria-label="examples use slices sort permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples (use-slices-sort)</h3>
+<div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go">sort<span class="token punctuation">.</span><span class="token function">Float64s</span><span class="token punctuation">(</span>temperatures<span class="token punctuation">)</span>
+sort<span class="token punctuation">.</span><span class="token function">Ints</span><span class="token punctuation">(</span>years<span class="token punctuation">)</span>
+sort<span class="token punctuation">.</span><span class="token function">Strings</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span>
+sort<span class="token punctuation">.</span><span class="token function">Slice</span><span class="token punctuation">(</span>cfg<span class="token punctuation">.</span>Dependencies<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> cfg<span class="token punctuation">.</span>Dependencies<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Name <span class="token operator">&lt;</span> cfg<span class="token punctuation">.</span>Dependencies<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>Name
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>Fixed code:</p>
+<div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go">slices<span class="token punctuation">.</span><span class="token function">Sort</span><span class="token punctuation">(</span>temperatures<span class="token punctuation">)</span>
+slices<span class="token punctuation">.</span><span class="token function">Sort</span><span class="token punctuation">(</span>years<span class="token punctuation">)</span>
+slices<span class="token punctuation">.</span><span class="token function">Sort</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span>
+slices<span class="token punctuation">.</span><span class="token function">SortFunc</span><span class="token punctuation">(</span>cfg<span class="token punctuation">.</span>Dependencies<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b config<span class="token punctuation">.</span>Dependency<span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> cmp<span class="token punctuation">.</span><span class="token function">Compare</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> b<span class="token punctuation">.</span>Name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
 <p><em>Configuration</em>: N/A</p>
 <h2 id="use-waitgroup-go"><a href="#use-waitgroup-go" aria-label="use waitgroup go permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>use-waitgroup-go</h2>
 <p><em>Description</em>: Since Go 1.25 the <code class="language-text">sync</code> package proposes the <a href="https://pkg.go.dev/sync#WaitGroup.Go"><code class="language-text">WaitGroup.Go</code></a> method.

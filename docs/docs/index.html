@@ -1125,6 +1125,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td align="center">no</td>
 </tr>
 <tr>
+<td><a href="./RULES_DESCRIPTIONS.md#use-slices-sort"><code class="language-text">use-slices-sort</code></a></td>
+<td align="center">n/a</td>
+<td align="left">Proposes to replace calls to <code class="language-text">sort.Ints</code>, <code class="language-text">sort.Strings</code> and the like with their equivalents from <code class="language-text">slices</code> package.</td>
+<td align="center">no</td>
+<td align="center">no</td>
+</tr>
+<tr>
 <td><a href="./RULES_DESCRIPTIONS.md#use-waitgroup-go"><code class="language-text">use-waitgroup-go</code></a></td>
 <td align="center">n/a</td>
 <td align="left">Proposes to replace <code class="language-text">wg.Add ... go {... wg.Done ...}</code> idiom with <code class="language-text">wg.Go</code></td>
@@ -1172,7 +1179,7 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <p>Here you can find how you can configure some existing rules:</p>
 <h3 id="var-naming"><a href="#var-naming" aria-label="var naming permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">var-naming</code></h3>
 <p>This rule accepts two slices of strings, an allowlist and a blocklist of initialisms. By default, the rule behaves exactly as the alternative
-in <code class="language-text">golint</code> but option<a href="https://github.com/golang/lint/issues/89">golint/lint/issues/89</a>)</p>
+in <code class="language-text">golint</code> but optionally, you can relax it (see <a href="https://github.com/golang/lint/issues/89">golint/lint/issues/89</a>)</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.var-naming</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"VM"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
 <p>This way, revive will not warn for an identifier called <code class="language-text">customId</code> but will warn that <code class="language-text">customVm</code> should be called <code class="language-text">customVM</code>.</p>
@@ -1310,7 +1317,7 @@ a standard JSON-based format for the output of static analysis tools defined and
 <p>The tool can be extended with custom rules or formatters. This section contains additional information on how to implement such.</p>
 <p>To extend the linter with a custom rule you can push it to this repository or use <code class="language-text">revive</code> as a library (see below)</p>
 <p>To add a custom formatter you'll have to push it to this repository or fork it.
-This is due to the limited <code class="language-text">-buildmode=plugin</code> support which <a href="https://golang.org/pkg/plugin/">works only on Linux (with known issues)</a>.</p>
+This is due to the limited <code class="language-text">-buildmode=plugin</code> support which <a href="https://pkg.go.dev/plugin">works only on Linux (with known issues)</a>.</p>
 <h3 id="writing-a-custom-rule"><a href="#writing-a-custom-rule" aria-label="writing a custom rule permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a Custom Rule</h3>
 <p>See <a href="./DEVELOPING.md">DEVELOPING.md</a> for instructions on how to write a custom rule.</p>
 <h4 id="using-revive-as-a-library"><a href="#using-revive-as-a-library" aria-label="using revive as a library permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using <code class="language-text">revive</code> as a library</h4>
@@ -1435,7 +1442,7 @@ where STDOUT is being piped to another command.</p>
 <li><a href="https://github.com/pingcap/tidb"><code class="language-text">tidb</code></a> - TiDB is a distributed HTAP database compatible with the MySQL protocol</li>
 <li><a href="https://github.com/grafana/grafana"><code class="language-text">grafana</code></a> - The tool for beautiful monitoring and metric analytics &#x26; dashboards for Graphite, InfluxDB &#x26; Prometheus &#x26; More</li>
 <li><a href="https://github.com/etcd-io/etcd"><code class="language-text">etcd</code></a> - Distributed reliable key-value store for the most critical data of a distributed system</li>
-<li><a href="https://github.com/uber/cadence"><code class="language-text">cadence</code></a> - Cadence is a distributed, scalable, durable, and highly available orchestration engine by Uber to execute asynchronous long-running business logic in a scalable and resilient way</li>
+<li><a href="https://github.com/uber/cadence"><code class="language-text">cadence</code></a> - Cadence isailable orchestration engine by Uber to execute asynchronous long-running business logic in a scalable and resilient way</li>
 <li><a href="https://github.com/MontFerret/ferret"><code class="language-text">ferret</code></a> - Declarative web scraping</li>
 <li><a href="https://github.com/gopasspw/gopass"><code class="language-text">gopass</code></a> - The slightly more awesome standard unix password manager for teams</li>
 <li><a href="https://github.com/go-gitea/gitea"><code class="language-text">gitea</code></a> - Git with a cup of tea, painless self-hosted git service</li>
