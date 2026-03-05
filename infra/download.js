@@ -49,6 +49,8 @@ const handleContent = (markdown, p) => {
     const name = e.attribs.src.split('/').pop();
     markdown = markdown.replace(e.attribs.src, `/images/gen/${name}`);
   });
+  // Replace RULES_DESCRIPTIONS.md links with ./r links
+  markdown = markdown.replace(/\]\(\.\/RULES_DESCRIPTIONS\.md#/g, '](./r#');
   markdown = `---
 path: "${p.path}"
 ---
