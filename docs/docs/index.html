@@ -899,6 +899,13 @@ b. <code class="language-text">&quot;&quot;</code> (empty) pattern excludes noth
 <td align="center">no</td>
 </tr>
 <tr>
+<td><a href="/r/#package-naming"><code class="language-text">package-naming</code></a></td>
+<td align="center">map</td>
+<td align="left">Checks that package names follow Go conventions and best practices</td>
+<td align="center">no</td>
+<td align="center">no</td>
+</tr>
+<tr>
 <td><a href="/r/#package-directory-mismatch"><code class="language-text">package-directory-mismatch</code></a></td>
 <td align="center">string</td>
 <td align="left">Checks that package name matches containing directory name</td>
@@ -1308,104 +1315,37 @@ a standard JSON-based format for the output of static analysis tools defined and
 <p>The tool can be extended with custom rules or formatters. This section contains additional information on how to implement such.</p>
 <p>To extend the linter with a custom rule you can push it to this repository or use <code class="language-text">revive</code> as a library (see below)</p>
 <p>To add a custom formatter you'll have to push it to this repository or fork it.
-This is due to the limited <code class="language-text">-buildmode=plugin</code> support which [works onuments = [["ID"], ["VM"]]</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">This way, revive will not warn for an identifier called `customId` but will warn that `customVm` should be called `customVM`.
+This is due to the limited <code class="language-text">-buildmode=plugin</code> support which <a href="https://pkg.go.dev/plugin">works only on Linux (with known issues)</a>.</p>
+<h3 id="writing-a-custom-rule"><a href="#writing-a-custom-rule" aria-label="writing a custom rule permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a Custom Rule</h3>
+<p>See <a href="./DEVELOPING.md">DEVELOPING.md</a> for instructions on how to write a custom rule.</p>
+<h4 id="using-revive-as-a-library"><a href="#using-revive-as-a-library" aria-label="using revive as a library permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using <code class="language-text">revive</code> as a library</h4>
+<p>If a rule is specific to your use case
+(i.e. it is not a good candidate to be added to <code class="language-text">revive</code>'s rule set) you can add it to your linter using <code class="language-text">revive</code> as a linting engine.</p>
+<p>The following code shows how to use <code class="language-text">revive</code> in your application.
+In the example only one rule is added (<code class="language-text">myRule</code>), of course, you can add as many as you need to.
+Your rules can be configured programmatically or with the standard <code class="language-text">revive</code> configuration file.
+The full rule set of <code class="language-text">revive</code> is also actionable by your application.</p>
+<div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-## Available Formatters
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"github.com/mgechev/revive/cli"</span>
+	<span class="token string">"github.com/mgechev/revive/lint"</span>
+	<span class="token string">"github.com/mgechev/revive/revivelib"</span>
+<span class="token punctuation">)</span>
 
-This section lists all the available formatters and provides a screenshot for each one.
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	cli<span class="token punctuation">.</span><span class="token function">RunRevive</span><span class="token punctuation">(</span>revivelib<span class="token punctuation">.</span><span class="token function">NewExtraRule</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>myRule<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> lint<span class="token punctuation">.</span>RuleConfig<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-### Friendly
+<span class="token keyword">type</span> myRule <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-![Friendly formatter](/assets/formatter-friendly.png)
+<span class="token keyword">func</span> <span class="token punctuation">(</span>f myRule<span class="token punctuation">)</span> <span class="token function">Name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token string">"myRule"</span>
+<span class="token punctuation">}</span>
 
-### Stylish
-
-![Stylish formatter](/assets/formatter-stylish.png)
-
-### Default
-
-The default formatter produces the same output as `golint`.
-
-![Default formatter](/assets/formatter-default.png)
-
-### Plain
-
-The plain formatter produces the same output as the default formatter and appends the URL to the rule description.
-
-![Plain formatter](/assets/formatter-plain.png)
-
-### Unix
-
-The unix formatter produces the same output as the default formatter but surrounds the rules in `[]`.
-
-![Unix formatter](/assets/formatter-unix.png)
-
-### JSON
-
-The `json` formatter produces output in JSON format.
-
-### NDJSON
-
-The `ndjson` formatter produces output in [`Newline Delimited JSON`](https://github.com/ndjson/ndjson-spec) format.
-
-### Checkstyle
-
-The `checkstyle` formatter produces output in a [Checkstyle-like](https://checkstyle.sourceforge.io/) format.
-
-### SARIF
-
-The `sarif`  formatter produces output in SARIF, for _Static Analysis Results Interchange Format_,
-a standard JSON-based format for the output of static analysis tools defined and promoted by [OASIS](https://www.oasis-open.org/).
-
-Current supported version of the standard is [SARIF-v2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/csprd01/sarif-v2.1.0-csprd01.html
-).
-
-## Extensibility
-
-The tool can be extended with custom rules or formatters. This section contains additional information on how to implement such.
-
-To extend the linter with a custom rule you can push it to this repository or use `revive` as a library (see below)
-
-To add a custom formatter you&#39;ll have to push it to this repository or fork it.
-This is due to the limited `-buildmode=plugin` support which [works only on Linux (with known issues)](https://pkg.go.dev/plugin).
-
-### Writing a Custom Rule
-
-See [DEVELOPING.md](./DEVELOPING.md) for instructions on how to write a custom rule.
-
-#### Using `revive` as a library
-
-If a rule is specific to your use case
-(i.e. it is not a good candidate to be added to `revive`&#39;s rule set) you can add it to your linter using `revive` as a linting engine.
-
-The following code shows how to use `revive` in your application.
-In the example only one rule is added (`myRule`), of course, you can add as many as you need to.
-Your rules can be configured programmatically or with the standard `revive` configuration file.
-The full rule set of `revive` is also actionable by your application.
-
-```go
-package main
-
-import (
-	&quot;github.com/mgechev/revive/cli&quot;
-	&quot;github.com/mgechev/revive/lint&quot;
-	&quot;github.com/mgechev/revive/revivelib&quot;
-)
-
-func main() {
-	cli.RunRevive(revivelib.NewExtraRule(&amp;myRule{}, lint.RuleConfig{}))
-}
-
-type myRule struct{}
-
-func (f myRule) Name() string {
-	return &quot;myRule&quot;
-}
-
-func (f myRule) Apply(*lint.File, lint.Arguments) []lint.Failure {
-	// ...
-}</code></pre></div>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>f myRule<span class="token punctuation">)</span> <span class="token function">Apply</span><span class="token punctuation">(</span><span class="token operator">*</span>lint<span class="token punctuation">.</span>File<span class="token punctuation">,</span> lint<span class="token punctuation">.</span>Arguments<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>lint<span class="token punctuation">.</span>Failure <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>You can still go further and use <code class="language-text">revive</code> without its CLI, as part of your library, or your CLI:</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">package</span> mylib
 
