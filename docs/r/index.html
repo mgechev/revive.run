@@ -52,6 +52,7 @@
 <p>List of all available rules.</p>
 <!-- toc -->
 <ul>
+<li><a href="#configuration-options-format">Configuration options format</a></li>
 <li><a href="#add-constant">add-constant</a></li>
 <li><a href="#argument-limit">argument-limit</a></li>
 <li><a href="#atomic">atomic</a></li>
@@ -156,22 +157,22 @@
 <li><a href="#waitgroup-by-value">waitgroup-by-value</a></li>
 </ul>
 <!-- tocstop -->
+<h2 id="configuration-options-format"><a href="#configuration-options-format" aria-label="configuration options format permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration options format</h2>
+<p>By convention, rule configuration options are documented using the <code class="language-text">kebab-case</code> format (e.g., <code class="language-text">max-lit-count</code>, <code class="language-text">allow-strs</code>, <code class="language-text">skip-comments</code>).
+For backward compatibility, <code class="language-text">camelCase</code> (e.g., <code class="language-text">maxLitCount</code>, <code class="language-text">allowStrs</code>, <code class="language-text">skipComments</code>)
+and <code class="language-text">lowercase</code> (e.g., <code class="language-text">maxlitcount</code>, <code class="language-text">allowstrs</code>, <code class="language-text">skipcomments</code>) formats are still supported but are deprecated.</p>
 <h2 id="add-constant"><a href="#add-constant" aria-label="add constant permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>add-constant</h2>
 <p><em>Description</em>: Suggests using constant for <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants">magic numbers</a>
 and string literals.</p>
 <p><em>Configuration</em>:</p>
 <ul>
-<li><code class="language-text">maxLitCount</code> (<code class="language-text">maxlitcount</code>, <code class="language-text">max-lit-count</code>): (string) maximum number of instances of a string literal that are tolerated before warn.</li>
-<li><code class="language-text">allowStrs</code> (<code class="language-text">allowstrs</code>, <code class="language-text">allow-strs</code>): (string) comma-separated list of allowed string literals</li>
-<li><code class="language-text">allowInts</code> (<code class="language-text">allowints</code>, <code class="language-text">allow-ints</code>): (string) comma-separated list of allowed integers</li>
-<li><code class="language-text">allowFloats</code> (<code class="language-text">allowfloats</code>, <code class="language-text">allow-floats</code>): (string) comma-separated list of allowed floats</li>
-<li><code class="language-text">ignoreFuncs</code> (<code class="language-text">ignorefuncs</code>, <code class="language-text">ignore-funcs</code>): (string) comma-separated list of function names regexp patterns to exclude</li>
+<li><code class="language-text">max-lit-count</code>: (string) maximum number of instances of a string literal that are tolerated before a warning is emitted.</li>
+<li><code class="language-text">allow-strs</code>: (string) comma-separated list of allowed string literals</li>
+<li><code class="language-text">allow-ints</code>: (string) comma-separated list of allowed integers</li>
+<li><code class="language-text">allow-floats</code>: (string) comma-separated list of allowed floats</li>
+<li><code class="language-text">ignore-funcs</code>: (string) comma-separated list of function names regexp patterns to exclude</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.add-constant</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span> <span class="token key property">maxLitCount</span> <span class="token punctuation">=</span> <span class="token string">"3"</span><span class="token punctuation">,</span> <span class="token key property">allowStrs</span> <span class="token punctuation">=</span> <span class="token string">"\"\""</span><span class="token punctuation">,</span> <span class="token key property">allowInts</span> <span class="token punctuation">=</span> <span class="token string">"0,1,2"</span><span class="token punctuation">,</span> <span class="token key property">allowFloats</span> <span class="token punctuation">=</span> <span class="token string">"0.0,0.,1.0,1.,2.0,2."</span><span class="token punctuation">,</span> <span class="token key property">ignoreFuncs</span> <span class="token punctuation">=</span> <span class="token string">"os\\.*,fmt\\.Println,make"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.add-constant</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span> <span class="token key property">max-lit-count</span> <span class="token punctuation">=</span> <span class="token string">"3"</span><span class="token punctuation">,</span> <span class="token key property">allow-strs</span> <span class="token punctuation">=</span> <span class="token string">"\"\""</span><span class="token punctuation">,</span> <span class="token key property">allow-ints</span> <span class="token punctuation">=</span> <span class="token string">"0,1,2"</span><span class="token punctuation">,</span> <span class="token key property">allow-floats</span> <span class="token punctuation">=</span> <span class="token string">"0.0,0.,1.0,1.,2.0,2."</span><span class="token punctuation">,</span> <span class="token key property">ignore-funcs</span> <span class="token punctuation">=</span> <span class="token string">"os\\.*,fmt\\.Println,make"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -270,13 +271,9 @@ metric = <em>comment lines / (lines of code + comment lines) * 100</em></p>
 This rule spots function declarations that do not follow the convention.</p>
 <p><em>Configuration</em>:</p>
 <ul>
-<li><code class="language-text">allowTypesBefore</code> (<code class="language-text">allowtypesbefore</code>, <code class="language-text">allow-types-before</code>): (string) comma-separated list of types that may be before 'context.Context'</li>
+<li><code class="language-text">allow-types-before</code>: (string) comma-separated list of types that may be before 'context.Context'</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.context-as-argument</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span> <span class="token key property">allowTypesBefore</span> <span class="token punctuation">=</span> <span class="token string">"*testing.T,*github.com/user/repo/testing.Harness"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.context-as-argument</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span> <span class="token key property">allow-types-before</span> <span class="token punctuation">=</span> <span class="token string">"*testing.T,*github.com/user/repo/testing.Harness"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -312,15 +309,15 @@ This rule looks for program exits in functions other than <code class="language-
 </thead>
 <tbody>
 <tr>
-<td>call-chain (callChain, callchain)</td>
-<td>even if deferring call-chains of the form <code class="language-text">foo()()</code> is valid, it does not helps code understanding (only the last call is deferred)</td>
+<td>call-chain</td>
+<td>even if deferring call-chains of the form <code class="language-text">foo()()</code> is valid, it does not help code understanding (only the last call is deferred)</td>
 </tr>
 <tr>
 <td>loop</td>
 <td>deferring inside loops can be misleading (deferred functions are not executed at the end of the loop iteration but of the current function) and it could lead to exhausting the execution stack</td>
 </tr>
 <tr>
-<td>method-call (methodCall, methodcall)</td>
+<td>method-call</td>
 <td>deferring a call to a method can lead to subtle bugs if the method does not have a pointer receiver</td>
 </tr>
 <tr>
@@ -328,12 +325,12 @@ This rule looks for program exits in functions other than <code class="language-
 <td>calling <code class="language-text">recover</code> outside a deferred function has no effect</td>
 </tr>
 <tr>
-<td>immediate-recover (immediateRecover, immediaterecover)</td>
+<td>immediate-recover</td>
 <td>calling <code class="language-text">recover</code> at the time a defer is registered, rather than as part of the deferred callback.  e.g. <code class="language-text">defer recover()</code> or equivalent.</td>
 </tr>
 <tr>
 <td>return</td>
-<td>returning values form a deferred function has no effect</td>
+<td>returning values from a deferred function has no effect</td>
 </tr>
 </tbody>
 </table>
@@ -341,9 +338,7 @@ This rule looks for program exits in functions other than <code class="language-
 <p>These gotchas are <a href="https://blog.learngoprogramming.com/gotchas-of-defer-in-go-1-8d070894cb01">described here</a>.</p>
 <p><em>Configuration</em>: By default, all warnings are enabled but it is possible selectively enable them through configuration.
 For example to enable only <code class="language-text">call-chain</code> and <code class="language-text">loop</code>:</p>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.defer</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"callChain"</span><span class="token punctuation">,</span> <span class="token string">"loop"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.defer</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"call-chain"</span><span class="token punctuation">,</span> <span class="token string">"loop"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="dot-imports"><a href="#dot-imports" aria-label="dot imports permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dot-imports</h2>
@@ -352,16 +347,9 @@ to an imported package.</p>
 <p>More <a href="https://go.dev/wiki/CodeReviewComments#import-dot">information here</a>.</p>
 <p><em>Configuration</em>:</p>
 <ul>
-<li><code class="language-text">allowedPackages</code> (<code class="language-text">allowedpackages</code>, <code class="language-text">allowed-packages</code>): (list of strings) comma-separated list of allowed dot import packages</li>
+<li><code class="language-text">allowed-packages</code>: (list of strings) list of allowed dot import packages</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.dot-imports</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span> <span class="token key property">allowedPackages</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
-    <span class="token string">"github.com/onsi/ginkgo/v2"</span><span class="token punctuation">,</span>
-    <span class="token string">"github.com/onsi/gomega"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.dot-imports</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span> <span class="token key property">allowed-packages</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
@@ -390,13 +378,11 @@ This rule spots constructions like</p>
 // do something</code></pre></div>
 <p><em>Configuration</em>: ([]string) rule flags. Available flags are:</p>
 <ul>
-<li><code class="language-text">preserveScope</code> (<code class="language-text">preservescope</code>, <code class="language-text">preserve-scope</code>): do not suggest refactorings that would increase variable scope</li>
-<li><code class="language-text">allowJump</code> (<code class="language-text">allowjump</code>, <code class="language-text">allow-jump</code>): suggest a new jump (<code class="language-text">return</code>, <code class="language-text">continue</code> or <code class="language-text">break</code> statement) if it could unnest multiple statements.
+<li><code class="language-text">preserve-scope</code>: do not suggest refactorings that would increase variable scope</li>
+<li><code class="language-text">allow-jump</code>: suggest a new jump (<code class="language-text">return</code>, <code class="language-text">continue</code> or <code class="language-text">break</code> statement) if it could unnest multiple statements.
 By default, only relocation of <em>existing</em> jumps (i.e. from the <code class="language-text">else</code> clause) are suggested.</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.early-return</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"preserveScope"</span><span class="token punctuation">,</span> <span class="token string">"allowJump"</span><span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.early-return</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"preserve-scope"</span><span class="token punctuation">,</span> <span class="token string">"allow-jump"</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="empty-block"><a href="#empty-block" aria-label="empty block permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>empty-block</h2>
@@ -491,8 +477,8 @@ and return value, even if they are repeated, promoting clarity.</p>
 <p><em>Configuration (1)</em>: (string) as a single string, it configures both argument
 and return value styles. Accepts 'any', 'short', or 'full' (default: 'any').</p>
 <p><em>Configuration (2)</em>: (map[string]any) as a map, allows separate configuration
-for function arguments and return values. Valid keys are <code class="language-text">funcArgStyle</code> (<code class="language-text">funcargstyle</code>, <code class="language-text">func-arg-style</code>) and
-<code class="language-text">funcRetValStyle</code> (<code class="language-text">funcretvalstyle</code>, <code class="language-text">func-ret-val-style</code>), each accepting 'any', 'short', or 'full'. If a key is not
+for function arguments and return values. Valid keys are <code class="language-text">func-arg-style</code> and
+<code class="language-text">func-ret-val-style</code>, each accepting 'any', 'short', or 'full'. If a key is not
 specified, the default value of 'any' is used.</p>
 <p><em>Note</em>: The rule applies checks based on the specified styles. For 'full' style,
 it flags instances where types are omitted in repeated arguments or return values.
@@ -501,9 +487,7 @@ Incorrect or unknown configuration values will result in an error.</p>
 <p>Example (1):</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.enforce-repeated-arg-type-style</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"short"</span><span class="token punctuation">]</span></code></pre></div>
-<p>Examples (2):</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.enforce-repeated-arg-type-style</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">funcArgStyle</span> <span class="token punctuation">=</span> <span class="token string">"full"</span><span class="token punctuation">,</span> <span class="token key property">funcRetValStyle</span> <span class="token punctuation">=</span> <span class="token string">"short"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
+<p>Example (2):</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.enforce-repeated-arg-type-style</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">func-arg-style</span> <span class="token punctuation">=</span> <span class="token string">"full"</span><span class="token punctuation">,</span> <span class="token key property">func-ret-val-style</span> <span class="token punctuation">=</span> <span class="token string">"short"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="enforce-slice-style"><a href="#enforce-slice-style" aria-label="enforce slice style permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>enforce-slice-style</h2>
@@ -525,18 +509,18 @@ Nil slices are always permitted.</p>
 It can check for <code class="language-text">default</code> case clause occurrence and/or position in the list of case clauses.</p>
 <p><em>Configuration</em>: ([]string) Specifies what to enforced: occurrence and/or position. The, non-mutually exclusive, options are:</p>
 <ul>
-<li>"allowNoDefault": allows <code class="language-text">switch</code> without <code class="language-text">default</code> case clause.</li>
-<li>"allowDefaultNotLast": allows <code class="language-text">default</code> case clause to be not the last clause of the <code class="language-text">switch</code>.</li>
+<li>"allow-no-default": allows <code class="language-text">switch</code> without <code class="language-text">default</code> case clause.</li>
+<li>"allow-default-not-last": allows <code class="language-text">default</code> case clause to be not the last clause of the <code class="language-text">switch</code>.</li>
 </ul>
 <p>Configuration examples:</p>
 <p>To enforce that all <code class="language-text">switch</code> statements have a <code class="language-text">default</code> clause as its the last case clause:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.enforce-switch-style</span><span class="token punctuation">]</span></code></pre></div>
 <p>To enforce that all <code class="language-text">switch</code> statements have a <code class="language-text">default</code> clause but its position is unimportant:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.enforce-switch-style</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"allowDefaultNotLast"</span><span class="token punctuation">]</span></code></pre></div>
+<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"allow-default-not-last"</span><span class="token punctuation">]</span></code></pre></div>
 <p>To enforce that in all <code class="language-text">switch</code> statements with a <code class="language-text">default</code> clause, the <code class="language-text">default</code> is the last case clause:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.enforce-switch-style</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"allowNoDefault"</span><span class="token punctuation">]</span></code></pre></div>
+<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"allow-no-default"</span><span class="token punctuation">]</span></code></pre></div>
 <p>Notice that a configuration including both options will effectively deactivate the whole rule.</p>
 <h2 id="error-naming"><a href="#error-naming" aria-label="error naming permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>error-naming</h2>
 <p><em>Description</em>: By convention, for the sake of readability, variables of type <code class="language-text">error</code> must be named with the prefix <code class="language-text">err</code>.</p>
@@ -565,26 +549,18 @@ This rule spots that kind of simplification opportunities.</p>
 Please notice that without configuration, the default behavior of the rule is that of its <code class="language-text">golint</code> counterpart.
 Available flags are:</p>
 <ul>
-<li><code class="language-text">checkPrivateReceivers</code> (<code class="language-text">checkprivatereceivers</code>, <code class="language-text">check-private-receivers</code>) enables checking public methods of private types</li>
-<li><code class="language-text">disableStutteringCheck</code> (<code class="language-text">disablestutteringcheck</code>, <code class="language-text">disable-stuttering-check</code>) disables checking for method names that stutter with the package name
+<li><code class="language-text">check-private-receivers</code> enables checking public methods of private types</li>
+<li><code class="language-text">disable-stuttering-check</code> disables checking for method names that stutter with the package name
 (i.e. avoid failure messages of the form <em>type name will be used as x.XY by other packages, and that stutters; consider calling this Y</em>)</li>
-<li><code class="language-text">sayRepetitiveInsteadOfStutters</code> (<code class="language-text">sayrepetitiveinsteadofstutters</code>, <code class="language-text">say-repetitive-instead-of-stutters</code>) replaces the use of the term <em>stutters</em>
-by <em>repetitive</em> in failure messages</li>
-<li><code class="language-text">checkPublicInterface</code> (<code class="language-text">checkpublicinterface</code>, <code class="language-text">check-public-interface</code>) enabled checking public method definitions in public interface types</li>
-<li><code class="language-text">disableChecksOnConstants</code> (<code class="language-text">disablechecksonconstants</code>, <code class="language-text">disable-checks-on-constants</code>) disable all checks on constant declarations</li>
-<li><code class="language-text">disableChecksOnFunctions</code> (<code class="language-text">disablechecksonfunctions</code>, <code class="language-text">disable-checks-on-functions</code>) disable all checks on function declarations</li>
-<li><code class="language-text">disableChecksOnMethods</code> (<code class="language-text">disablechecksonmethods</code>, <code class="language-text">disable-checks-on-methods</code>) disable all checks on method declarations</li>
-<li><code class="language-text">disableChecksOnTypes</code> (<code class="language-text">disablechecksontypes</code>, <code class="language-text">disable-checks-on-types</code>) disable all checks on type declarations</li>
-<li><code class="language-text">disableChecksOnVariables</code> (<code class="language-text">disablechecksonvariables</code>, <code class="language-text">disable-checks-on-variables</code>) disable all checks on variable declarations</li>
+<li><code class="language-text">say-repetitive-instead-of-stutters</code> replaces the use of the term <em>stutters</em> by <em>repetitive</em> in failure messages</li>
+<li><code class="language-text">check-public-interface</code> enables checking public method definitions in public interface types</li>
+<li><code class="language-text">disable-checks-on-constants</code> disables all checks on constant declarations</li>
+<li><code class="language-text">disable-checks-on-functions</code> disables all checks on function declarations</li>
+<li><code class="language-text">disable-checks-on-methods</code> disables all checks on method declarations</li>
+<li><code class="language-text">disable-checks-on-types</code> disables all checks on type declarations</li>
+<li><code class="language-text">disable-checks-on-variables</code> disables all checks on variable declarations</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.exported</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
-  <span class="token string">"checkPrivateReceivers"</span><span class="token punctuation">,</span>
-  <span class="token string">"disableStutteringCheck"</span><span class="token punctuation">,</span>
-  <span class="token string">"checkPublicInterface"</span><span class="token punctuation">,</span>
-  <span class="token string">"disableChecksOnFunctions"</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.exported</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
   <span class="token string">"check-private-receivers"</span><span class="token punctuation">,</span>
@@ -603,12 +579,10 @@ by <em>repetitive</em> in failure messages</li>
 <p><em>Configuration</em>:</p>
 <ul>
 <li><code class="language-text">max</code>: (int) a maximum number of lines in a file. Must be non-negative integers. 0 means the rule is disabled (default <code class="language-text">0</code>);</li>
-<li><code class="language-text">skipComments</code> (<code class="language-text">skipcomments</code>, <code class="language-text">skip-comments</code>): (bool) if true ignore and do not count lines containing just comments (default <code class="language-text">false</code>);</li>
-<li><code class="language-text">skipBlankLines</code> (<code class="language-text">skipblanklines</code>, <code class="language-text">skip-blank-lines</code>): (bool) if true ignore and do not count lines made up purely of whitespace (default <code class="language-text">false</code>).</li>
+<li><code class="language-text">skip-comments</code>: (bool) if true ignore and do not count lines containing just comments (default <code class="language-text">false</code>);</li>
+<li><code class="language-text">skip-blank-lines</code>: (bool) if true ignore and do not count lines made up purely of whitespace (default <code class="language-text">false</code>).</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.file-length-limit</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">max</span> <span class="token punctuation">=</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token key property">skipComments</span> <span class="token punctuation">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token key property">skipBlankLines</span> <span class="token punctuation">=</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.file-length-limit</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">max</span> <span class="token punctuation">=</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token key property">skip-comments</span> <span class="token punctuation">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token key property">skip-blank-lines</span> <span class="token punctuation">=</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="filename-format"><a href="#filename-format" aria-label="filename format permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>filename-format</h2>
@@ -706,18 +680,16 @@ Importantly, aliases with underscores ("_") are always allowed.</p>
 <p><em>Configuration</em> (1): (<code class="language-text">string</code>) as plain string accepts allow regexp pattern for aliases (default: <code class="language-text">^[a-z][a-z0-9]{0,}$</code>).</p>
 <p><em>Configuration</em> (2): (<code class="language-text">map[string]string</code>) as a map accepts two values:</p>
 <ul>
-<li>for a key <code class="language-text">allowRegex</code> (<code class="language-text">allowregex</code>, <code class="language-text">allow-regex</code>) accepts allow regexp pattern</li>
-<li>for a key <code class="language-text">denyRegex</code> (<code class="language-text">denyregex</code>, <code class="language-text">deny-regex</code>) deny regexp pattern</li>
+<li>for a key <code class="language-text">allow-regex</code> accepts allow regexp pattern</li>
+<li>for a key <code class="language-text">deny-regex</code> deny regexp pattern</li>
 </ul>
-<p><em>Note</em>: If both <code class="language-text">allowRegex</code> and <code class="language-text">denyRegex</code> are provided, the alias must comply with both of them.
-If none are given (i.e. an empty map), the default value <code class="language-text">^[a-z][a-z0-9]{0,}$</code> for allowRegex is used.
+<p><em>Note</em>: If both <code class="language-text">allow-regex</code> and <code class="language-text">deny-regex</code> are provided, the alias must comply with both of them.
+If none are given (i.e. an empty map), the default value <code class="language-text">^[a-z][a-z0-9]{0,}$</code> for <code class="language-text">allow-regex</code> is used.
 Unknown keys will result in an error.</p>
 <p>Configuration example (1):</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.import-alias-naming</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"^[a-z][a-z0-9]{0,}$"</span><span class="token punctuation">]</span></code></pre></div>
-<p>Configuration examples (2):</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.import-alias-naming</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">allowRegex</span> <span class="token punctuation">=</span> <span class="token string">"^[a-z][a-z0-9]{0,}$"</span><span class="token punctuation">,</span> <span class="token key property">denyRegex</span> <span class="token punctuation">=</span> <span class="token string">'^v\d+$'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example (2):</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.import-alias-naming</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">allow-regex</span> <span class="token punctuation">=</span> <span class="token string">"^[a-z][a-z0-9]{0,}$"</span><span class="token punctuation">,</span> <span class="token key property">deny-regex</span> <span class="token punctuation">=</span> <span class="token string">'^v\d+$'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="import-shadowing"><a href="#import-shadowing" aria-label="import shadowing permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>import-shadowing</h2>
@@ -743,11 +715,9 @@ This rule highlights redundant <em>else-blocks</em> that can be eliminated from 
 <p>More <a href="https://go.dev/wiki/CodeReviewComments#indent-error-flow">information here</a>.</p>
 <p><em>Configuration</em>: ([]string) rule flags. Available flags are:</p>
 <ul>
-<li><code class="language-text">preserveScope</code> (<code class="language-text">preservescope</code>, <code class="language-text">preserve-scope</code>): do not suggest refactorings that would increase variable scope</li>
+<li><code class="language-text">preserve-scope</code>: do not suggest refactorings that would increase variable scope</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.indent-error-flow</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"preserveScope"</span><span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.indent-error-flow</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"preserve-scope"</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="inefficient-map-lookup"><a href="#inefficient-map-lookup" aria-label="inefficient map lookup permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>inefficient-map-lookup</h2>
@@ -840,24 +810,18 @@ This rule arose from package naming checks in <code class="language-text">var-na
 </ul>
 <p><em>Configuration</em>: (optional) single map of options (<code class="language-text">map[string]any</code>), provided as the single configuration argument in the rule's arguments array.</p>
 <ul>
-<li><code class="language-text">skipConventionNameCheck</code> (<code class="language-text">skipconventionnamecheck</code>, <code class="language-text">skip-convention-name-check</code>): (bool)
-If <code class="language-text">true</code>, skip checks for package name conventions (underscores, MixedCaps, etc.). Default: <code class="language-text">false</code>.
-This option is mutually exclusive with <code class="language-text">conventionNameCheckRegex</code>; setting both results in a configuration error.</li>
-<li><code class="language-text">conventionNameCheckRegex</code> (<code class="language-text">conventionnamecheckregex</code>, <code class="language-text">convention-name-check-regex</code>): (string)
-Custom regex pattern to validate package names. If set, package names must match this pattern.
-The value must be a non-empty string, and this option is mutually exclusive with <code class="language-text">skipConventionNameCheck</code>; setting both results in a configuration error.</li>
-<li><code class="language-text">skipTopLevelCheck</code> (<code class="language-text">skiptoplevelcheck</code>, <code class="language-text">skip-top-level-check</code>): (bool)
-If <code class="language-text">true</code>, skip checks for top-level package names (e.g., <code class="language-text">pkg</code>). Default: <code class="language-text">false</code>.</li>
-<li><code class="language-text">skipDefaultBadNameCheck</code> (<code class="language-text">skipdefaultbadnamecheck</code>, <code class="language-text">skip-default-bad-name-check</code>): (bool)
-If <code class="language-text">true</code>, skip checks for default bad package names (e.g., <code class="language-text">common</code>, <code class="language-text">utils</code>). Default: <code class="language-text">false</code>.</li>
-<li><code class="language-text">checkExtraBadName</code> (<code class="language-text">checkextrabadname</code>, <code class="language-text">check-extra-bad-name</code>): (bool)
-If <code class="language-text">true</code>, enable checks for extra bad package names (e.g., <code class="language-text">helpers</code>, <code class="language-text">models</code>, <code class="language-text">shared</code>, <code class="language-text">utilities</code>). Default: <code class="language-text">false</code>.</li>
-<li><code class="language-text">userDefinedBadNames</code> (<code class="language-text">userdefinedbadnames</code>, <code class="language-text">user-defined-bad-names</code>): ([]string) List of user-defined bad package names to check for.</li>
-<li><code class="language-text">skipCollisionWithCommonStd</code> (<code class="language-text">skipcollisionwithcommonstd</code>, <code class="language-text">skip-collision-with-common-std</code>): (bool)
-If <code class="language-text">true</code>, skip checks for collisions with the most common Go standard library packages. Default: <code class="language-text">false</code>.</li>
-<li><code class="language-text">checkCollisionWithAllStd</code> (<code class="language-text">checkcollisionwithallstd</code>, <code class="language-text">check-collision-with-all-std</code>): (bool)
-If <code class="language-text">true</code>, enable checks for collisions with all packages from Go standard library. Default: <code class="language-text">false</code>.
-This option is mutually exclusive with <code class="language-text">skipCollisionWithCommonStd</code>; setting both results in a configuration error.</li>
+<li><code class="language-text">skip-convention-name-check</code>: (bool) If <code class="language-text">true</code>, skip checks for package name conventions (underscores, MixedCaps, etc.). Default: <code class="language-text">false</code>.
+This option is mutually exclusive with <code class="language-text">convention-name-check-regex</code>; setting both results in a configuration error.</li>
+<li><code class="language-text">convention-name-check-regex</code>: (string) Custom regex pattern to validate package names. If set, package names must match this pattern.
+The value must be a non-empty string, and this option is mutually exclusive with <code class="language-text">skip-convention-name-check</code>;
+setting both results in a configuration error.</li>
+<li><code class="language-text">skip-top-level-check</code>: (bool) If <code class="language-text">true</code>, skip checks for top-level package names (e.g., <code class="language-text">pkg</code>). Default: <code class="language-text">false</code>.</li>
+<li><code class="language-text">skip-default-bad-name-check</code>: (bool) If <code class="language-text">true</code>, skip checks for default bad package names (e.g., <code class="language-text">common</code>, <code class="language-text">utils</code>). Default: <code class="language-text">false</code>.</li>
+<li><code class="language-text">check-extra-bad-name</code>: (bool) If <code class="language-text">true</code>, enable checks for extra bad package names (e.g., <code class="language-text">helpers</code>, <code class="language-text">models</code>, <code class="language-text">shared</code>, <code class="language-text">utilities</code>). Default: <code class="language-text">false</code>.</li>
+<li><code class="language-text">user-defined-bad-names</code>: ([]string) List of user-defined bad package names to check for.</li>
+<li><code class="language-text">skip-collision-with-common-std</code>: (bool) If <code class="language-text">true</code>, skip checks for collisions with the most common Go standard library packages. Default: <code class="language-text">false</code>.</li>
+<li><code class="language-text">check-collision-with-all-std</code>: (bool) If <code class="language-text">true</code>, enable checks for collisions with all packages from Go standard library. Default: <code class="language-text">false</code>.
+This option is mutually exclusive with <code class="language-text">skip-collision-with-common-std</code>; setting both results in a configuration error.</li>
 </ul>
 <p>Configuration examples:</p>
 <p>Default settings (check for name conventions, top level packages, common bad names, and collision with common Go standard library packages):</p>
@@ -899,7 +863,7 @@ underscores (<code class="language-text">_</code>), and dots (<code class="langu
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">ignore-directories</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"testcases"</span><span class="token punctuation">,</span> <span class="token string">"testinfo"</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <p>Include all directories (<code class="language-text">testdata</code> also)</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.package-directory-mismatch</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">ignoreDirectories</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
+<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">ignore-directories</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="range-val-address"><a href="#range-val-address" aria-label="range val address permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>range-val-address</h2>
 <p><em>Description</em>: Range variables in a loop are reused at each iteration.
 This rule warns when assigning the address of the variable, passing the address to append() or using it in a map.</p>
@@ -920,11 +884,9 @@ For example, if the receiver is of type <code class="language-text">Parts</code>
 Contrary to other languages, it is not idiomatic to name receivers as <code class="language-text">this</code> or <code class="language-text">self</code>.</p>
 <p><em>Configuration</em>: (optional) list of key-value-pair-map (<code class="language-text">[]map[string]any</code>).</p>
 <ul>
-<li><code class="language-text">maxLength</code> (<code class="language-text">maxlength</code>, <code class="language-text">max-length</code>): (int) max length of receiver name</li>
+<li><code class="language-text">max-length</code>: (int) max length of receiver name</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.receiver-naming</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">maxLength</span> <span class="token punctuation">=</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.receiver-naming</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">max-length</span> <span class="token punctuation">=</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="redefines-builtin-id"><a href="#redefines-builtin-id" aria-label="redefines builtin id permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>redefines-builtin-id</h2>
@@ -1089,11 +1051,9 @@ For example, to instruct the rule not to check <code class="language-text">valid
 This rule highlights redundant <em>else-blocks</em> that can be eliminated from the code.</p>
 <p><em>Configuration</em>: ([]string) rule flags. Available flags are:</p>
 <ul>
-<li><code class="language-text">preserveScope</code> (<code class="language-text">preservescope</code>, <code class="language-text">preserve-scope</code>): (string) do not suggest refactorings that would increase variable scope</li>
+<li><code class="language-text">preserve-scope</code>: (string) do not suggest refactorings that would increase variable scope</li>
 </ul>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.superfluous-else</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"preserveScope"</span><span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.superfluous-else</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"preserve-scope"</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="time-date"><a href="#time-date" aria-label="time date permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>time-date</h2>
@@ -1143,7 +1103,7 @@ This rule highlights redundant <em>else-blocks</em> that can be eliminated from 
 	<span class="token number">0x7e7</span><span class="token punctuation">,</span>    <span class="token comment">// hexadecimal notation: use 2023 instead of 0x7e7/</span>
 	<span class="token number">0</span>b1<span class="token punctuation">,</span>      <span class="token comment">// binary notation: use 1 instead of 0b1/</span>
 	<span class="token number">0</span>x_2<span class="token punctuation">,</span>     <span class="token comment">// hexadecimal notation: use 2 instead of 0x_2/</span>
-	<span class="token number">1</span>_3<span class="token punctuation">,</span>      <span class="token comment">// alternative notation: use 13 instead of 1_3/</span>
+	ative notation<span class="token punctuation">:</span> use <span class="token number">13</span> instead of <span class="token number">1</span>_3<span class="token operator">/</span>
 	<span class="token number">1e1</span><span class="token punctuation">,</span>      <span class="token comment">// exponential notation: use 10 instead of 1e1/</span>
 	<span class="token number">0.</span><span class="token punctuation">,</span>       <span class="token comment">// float literal: use 0 instead of 0./</span>
 	<span class="token number">0x1</span><span class="token punctuation">.</span>Fp<span class="token operator">+</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token comment">// float literal: use 124 instead of 0x1.Fp+6/</span>
@@ -1166,14 +1126,12 @@ this rule highlights those cases.</p>
 <p><em>Description</em>: This rule checks whether a type assertion result is checked (the <code class="language-text">ok</code> value), preventing unexpected <code class="language-text">panic</code>s.</p>
 <p><em>Configuration</em>: list of key-value-pair-map (<code class="language-text">[]map[string]any</code>).</p>
 <ul>
-<li><code class="language-text">acceptIgnoredAssertionResult</code> (<code class="language-text">acceptignoredassertionresult</code>, <code class="language-text">accept-ignored-assertion-result</code>): (bool) default <code class="language-text">false</code>,
+<li><code class="language-text">accept-ignored-assertion-result</code>: (bool) default <code class="language-text">false</code>,
 set it to <code class="language-text">true</code> to accept ignored type assertion results like this:</li>
 </ul>
 <div class="gatsby-highlight" data-language="golang"><pre class="language-golang"><code class="language-golang">foo, _ := bar(.*Baz).
 //   ^</code></pre></div>
-<p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.unchecked-type-assertion</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">acceptIgnoredAssertionResult</span> <span class="token punctuation">=</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
+<p>Configuration example:</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.unchecked-type-assertion</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">accept-ignored-assertion-result</span> <span class="token punctuation">=</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="unconditional-recursion"><a href="#unconditional-recursion" aria-label="unconditional recursion permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>unconditional-recursion</h2>
@@ -1239,24 +1197,20 @@ Secure alternatives like <code class="language-text">https</code> should be pref
 <p>The rule will not warn on local URLs (<code class="language-text">localhost</code>, <code class="language-text">127.0.0.1</code>).</p>
 <h2 id="unused-parameter"><a href="#unused-parameter" aria-label="unused parameter permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>unused-parameter</h2>
 <p><em>Description</em>: This rule warns on unused parameters. Functions or methods with unused parameters can be a symptom of an unfinished refactoring or a bug.</p>
-<p><em>Configuration</em>: Supports arguments with single of <code class="language-text">map[string]any</code> with option <code class="language-text">allowRegex</code> (<code class="language-text">allowregex</code>, <code class="language-text">allow-regex</code>) to provide additional
-to <code class="language-text">_</code> mask to allowed unused parameter names.</p>
-<p>Configuration examples:</p>
+<p><em>Configuration</em>: Supports a single <code class="language-text">map[string]any</code> argument with an <code class="language-text">allow-regex</code> option to
+specify additional allowed patterns for unused parameter names beyond the default <code class="language-text">_</code>.</p>
+<p>Configuration example:</p>
 <p>This allows any names starting with <code class="language-text">_</code>, not just <code class="language-text">_</code> itself:</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">SomeFunc</span><span class="token punctuation">(</span>_someObj <span class="token operator">*</span>MyStruct<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// matches rule</span></code></pre></div>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.unused-parameter</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">allowRegex</span> <span class="token punctuation">=</span> <span class="token string">"^_"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.unused-parameter</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">allow-regex</span> <span class="token punctuation">=</span> <span class="token string">"^_"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="unused-receiver"><a href="#unused-receiver" aria-label="unused receiver permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>unused-receiver</h2>
 <p><em>Description</em>: This rule warns on unused method receivers. Methods with unused receivers can be a symptom of an unfinished refactoring or a bug.</p>
 <p><em>Configuration</em>:
-Supports arguments with single of <code class="language-text">map[string]any</code> with option <code class="language-text">allowRegex</code> to provide additional to <code class="language-text">_</code> mask to allowed unused receiver names.</p>
-<p>Configuration examples:</p>
+Supports a single <code class="language-text">map[string]any</code> argument with an <code class="language-text">allow-regex</code> option to specify additional allowed unused receiver name patterns beyond <code class="language-text">_</code>.</p>
+<p>Configuration example:</p>
 <p>This allows any names starting with <code class="language-text">_</code>, not just <code class="language-text">_</code> itself:</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token punctuation">(</span>_my <span class="token operator">*</span>MyStruct<span class="token punctuation">)</span> <span class="token function">SomeMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// matches rule</span></code></pre></div>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.unused-receiver</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">allowRegex</span> <span class="token punctuation">=</span> <span class="token string">"^_"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.unused-receiver</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">allow-regex</span> <span class="token punctuation">=</span> <span class="token string">"^_"</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre></div>
 <h2 id="use-any"><a href="#use-any" aria-label="use any permalink" class="anchor"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>use-any</h2>
@@ -1342,21 +1296,17 @@ It ignores functions starting with <code class="language-text">Example</code>, <
 <p><em>Configuration</em>: This rule accepts two slices of strings and one optional slice containing a single map with named parameters.
 (This is because TOML does not support "slice of any," and we maintain backward compatibility with the previous configuration version).
 The first slice is an allowlist, and the second one is a blocklist of initialisms.
-You can add a boolean parameter <code class="language-text">skipInitialismNameChecks</code> (<code class="language-text">skipinitialismnamechecks</code> or <code class="language-text">skip-initialism-name-checks</code>) to control how names
+You can add a boolean parameter <code class="language-text">skip-initialism-name-checks</code> to control how names
 of functions, variables, consts, and structs handle known initialisms (e.g., JSON, HTTP, etc.) when written in <code class="language-text">camelCase</code>.
-When <code class="language-text">skipInitialismNameChecks</code> is set to true, the rule allows names like <code class="language-text">readJson</code>, <code class="language-text">HttpMethod</code> etc.
-In the map, you can add a boolean <code class="language-text">upperCaseConst</code> (<code class="language-text">uppercaseconst</code>, <code class="language-text">upper-case-const</code>) parameter to allow <code class="language-text">UPPER_CASE</code> for <code class="language-text">const</code>.</p>
+When <code class="language-text">skip-initialism-name-checks</code> is set to true, the rule allows names like <code class="language-text">readJson</code>, <code class="language-text">HttpMethod</code> etc.
+In the map, you can add a boolean <code class="language-text">upper-case-const</code> parameter to allow <code class="language-text">UPPER_CASE</code> for <code class="language-text">const</code>.</p>
 <p>By default, the rule behaves exactly as the alternative in <code class="language-text">golint</code> for non-package identifiers;
 <code class="language-text">golint</code>-equivalent package-name warnings now require enabling the <a href="#package-naming"><code class="language-text">package-naming</code></a> rule.
-The legacy package-related options <code class="language-text">skipPackageNameChecks</code>, <code class="language-text">extraBadPackageNames</code>, and <code class="language-text">skipPackageNameCollisionWithGoStd</code> are deprecated
+The legacy package-related options <code class="language-text">skip-package-name-checks</code>, <code class="language-text">extra-bad-package-names</code>, and <code class="language-text">skip-package-name-collision-with-go-std</code> are deprecated
 and are now treated as no-ops by <code class="language-text">var-naming</code> (they are ignored, apart from an optional warning when logging is enabled).
 Package-name checks should be configured via the <a href="#package-naming"><code class="language-text">package-naming</code></a> rule instead,
 and these options should be removed from <code class="language-text">var-naming</code> configurations to avoid confusion.</p>
 <p>Configuration examples:</p>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.var-naming</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">skipInitialismNameChecks</span> <span class="token punctuation">=</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
-<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.var-naming</span><span class="token punctuation">]</span>
-<span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"VM"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">upperCaseConst</span> <span class="token punctuation">=</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.var-naming</span><span class="token punctuation">]</span>
 <span class="token key property">arguments</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token key property">skip-initialism-name-checks</span> <span class="token punctuation">=</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre></div>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">rule.var-naming</span><span class="token punctuation">]</span>
@@ -1365,7 +1315,8 @@ and these options should be removed from <code class="language-text">var-naming<
 <p><em>Description</em>: Function parameters that are passed by value, are in fact a copy of the original argument.
 Passing a copy of a <code class="language-text">sync.WaitGroup</code> is usually not what the developer wants to do.
 This rule warns when a <code class="language-text">sync.WaitGroup</code> expected as a by-value parameter in a function or method.</p>
-<p><em>Configuration</em>: N/A</p></div></div></div></div></div></div></div></div></div><script>
+<p><em>Configuration</em>: N/A
+onfiguration_: N/A</p></div></div></div></div></div></div></div></div></div><script>
   
   
   if(true) {
